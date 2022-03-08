@@ -25,6 +25,7 @@ World* TheWorld;
 
 int main()
 {
+    srand(time(0));
     //glfw初始化
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -65,6 +66,9 @@ int main()
 
     //开启深度测试
     glEnable(GL_DEPTH_TEST);
+    //
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     float currentFrame = glfwGetTime();
     float lastFrame = currentFrame;
@@ -76,7 +80,7 @@ int main()
         currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
-        TheInput->ProcessInput();
+        TheInput->ProcessInput(deltaTime);
         TheWorld->UpdateEntities(deltaTime);
 
         //更新相机位置

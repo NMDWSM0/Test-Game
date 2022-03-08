@@ -43,7 +43,7 @@ class Input
 public:
 	Input(GLFWwindow* w, Player* ThePlayer, GLuint cursormode = GLFW_CURSOR_DISABLED);
 
-    void ProcessInput();
+    void ProcessInput(float deltaT);
 };
 
 Input::Input(GLFWwindow* w, Player* ThePlayer, GLuint cursormode):
@@ -55,9 +55,8 @@ Input::Input(GLFWwindow* w, Player* ThePlayer, GLuint cursormode):
 	glfwSetScrollCallback(window, scroll_callback);
 }
 
-void Input::ProcessInput()
+void Input::ProcessInput(float deltaT)
 {
-    static float lastFrame = 0.0f;
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 
@@ -84,12 +83,17 @@ void Input::ProcessInput()
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
         player->Down();
 
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS && glfwGetKey(window, GLFW_KEY_D) != GLFW_PRESS)
         player->Left();
-    else if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+    else if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS && glfwGetKey(window, GLFW_KEY_A) != GLFW_PRESS)
         player->Right();
     else
-        player->PauseLROnGround();
+        player->PauseLR();
+
+    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+        player->ShootArrow();
+
+    player->UpdateKeyCD(deltaT);
 }
 
 #endif 

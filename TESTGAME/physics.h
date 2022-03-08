@@ -16,11 +16,14 @@ public:
 
 	enum COLLISIONGROUP {
 		WORLD,
-		ENTITIES,
+		MOVABLE,
 		PLAYER,
+		ENTITIES,
+		NOTHING
 	};
 
 	enum COLLIDEDIRECTION {
+		ALLDIR,
 		HORIZONTAL,
 		VERTICAL,
 		NONE,
@@ -100,7 +103,7 @@ glm::vec2 Physics::GiveVelocity(glm::vec2 v)
 void Physics::UpdateVelocity(float deltaT)
 {
 	if (gravtype == GRAVITATIONAL && fabs(velocity.y) < MAX_VELOCITY)
-		velocity += glm::vec2(0.0f, -deltaT * _g);
+		velocity.y -= deltaT * _g;
 }
 
 #endif // !PHYSICS_H

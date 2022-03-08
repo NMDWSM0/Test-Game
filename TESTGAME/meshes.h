@@ -311,7 +311,7 @@ void Meshes::Terminate()
 
 Meshes::~Meshes()
 {
-	Terminate();
+	//Terminate();
 }
 
 #endif // !MESHES_H

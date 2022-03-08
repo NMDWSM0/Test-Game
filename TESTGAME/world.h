@@ -7,7 +7,7 @@
 #include "entity.h"
 #include "player.h"
 
-class World
+class World : public Object
 {
 	std::vector<Entity*> entities;
 
