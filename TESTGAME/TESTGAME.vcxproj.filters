@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\graphics">
+      <UniqueIdentifier>{53df88ac-051b-40c7-9df7-4f12b685bd41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\graphics\camera">
+      <UniqueIdentifier>{52451abe-ea4c-44ad-9d0a-d3c5233f13f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\graphics\material">
+      <UniqueIdentifier>{3ed9a358-14dd-4cc2-a40d-21137efc5fa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\graphics\meshes">
+      <UniqueIdentifier>{9e14f3bb-0907-4888-9104-45c4dd899b3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\graphics\shader">
+      <UniqueIdentifier>{9d8be33a-d1f9-42a3-9429-6edb6f0f679d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\others">
+      <UniqueIdentifier>{7f2e3503-c805-4762-8247-54f59a998db4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\others\glad">
+      <UniqueIdentifier>{5e1004d7-a0fe-463f-b225-ae4481a3bb8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\objects">
+      <UniqueIdentifier>{96038147-ba42-4394-8326-b06e3bcdaa19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\objects\entities">
+      <UniqueIdentifier>{3c40da6e-0fe5-4b45-8bc4-82d5b4e2054e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\graphics\textures">
+      <UniqueIdentifier>{3232255e-0aeb-4a00-8180-8dea2138dbae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\shaders">
+      <UniqueIdentifier>{92d6d2da-1448-4426-a21a-ae2b230db231}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\shaders\mainshader">
+      <UniqueIdentifier>{54334357-df21-48ff-b9eb-f9385df0af4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\input">
+      <UniqueIdentifier>{5c953c22-4826-4e2f-a88e-96d076832cae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\physics">
+      <UniqueIdentifier>{daa0e7d6-8f12-4b78-929d-4a4d451a471a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\world">
+      <UniqueIdentifier>{3657facc-953e-4c52-bd0f-1a50c9e88698}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\world">
+      <UniqueIdentifier>{c1362cf7-2d88-4e99-b245-7bcf0ffa3cdc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="camera.h">
+      <Filter>头文件\graphics\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>头文件\graphics\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="meshes.h">
+      <Filter>头文件\graphics\meshes</Filter>
+    </ClInclude>
+    <ClInclude Include="material.h">
+      <Filter>头文件\graphics\material</Filter>
+    </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>头文件\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="textures.h">
+      <Filter>头文件\graphics\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="followcamera.h">
+      <Filter>头文件\graphics\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>头文件\input</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>头文件\objects\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="world.h">
+      <Filter>头文件\world</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>头文件\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="redblock.h">
+      <Filter>头文件\objects\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="entities.h">
+      <Filter>头文件\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="physics.h">
+      <Filter>头文件\physics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\OpenGL\src\glad.c">
+      <Filter>源文件\others\glad</Filter>
+    </ClCompile>
+    <ClCompile Include="world.cpp">
+      <Filter>源文件\world</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\mainshader\main.frag">
+      <Filter>源文件\shaders\mainshader</Filter>
+    </None>
+    <None Include="shaders\mainshader\main.vert">
+      <Filter>源文件\shaders\mainshader</Filter>
+    </None>
+  </ItemGroup>
+</Project>
