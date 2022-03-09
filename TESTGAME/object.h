@@ -1,6 +1,7 @@
 #pragma once
 #ifndef OBJECT_H
 #define OBJECT_H
+#define PI 3.1415926535
 #include "shader.h"
 #include <vector>
 #include <any>
@@ -51,6 +52,8 @@ struct PeriodicTasker
     }
 };
 
+typedef std::vector<std::any> DATA;
+
 class Object
 {
 public:
@@ -67,12 +70,12 @@ protected:
 
     }
 
-    virtual void EventTask(unsigned int id)
+    virtual void EventTask(unsigned int id, DATA data = DATA{})
     {
 
     }
 
-    virtual void PeriodicTask(unsigned int id)
+    virtual void PeriodicTask(unsigned int id, float time)
     {
 
     }
@@ -80,7 +83,7 @@ protected:
 public:
     virtual ~Object() {};
 
-    bool HasTag(const std::string& tag)
+    bool HasTag(const std::string& tag) const
     {
         for (auto s : tags)
             if (s == tag)
@@ -88,7 +91,7 @@ public:
         return false;
     }
 
-    /*void AddTag(const std::string& tag)
+    void AddTag(const std::string& tag)
     {
         std::string t(tag);
         tags.push_back(t);
@@ -97,14 +100,16 @@ public:
     void RemoveTag(const std::string& tag)
     {
         std::vector<std::string>::iterator iter;
-        for (iter = tags.begin(); iter != tags.end(); ++iter)
+        for (iter = tags.begin(); iter != tags.end(); )
         {
             if (*iter == tag)
             {
-                tags.erase(iter);
+                iter = tags.erase(iter);
             }
+            else
+                ++iter;
         }
-    }*/
+    }
 
     void ListenForEvent(const std::string& eventname, unsigned int id, const std::string& key = "")
     {
@@ -130,12 +135,12 @@ public:
         }
     }
 
-    void PushEvent(const std::string& eventname)
+    void PushEvent(const std::string& eventname, DATA data = DATA{})
     {
         for (auto l : listeners)
         {
             if (l.name == eventname)
-                EventTask(l.func_id);
+                EventTask(l.func_id, data);
         }
     }
 
@@ -160,7 +165,7 @@ public:
         }
     }
 
-    void DoPeridiocTask(float period, unsigned int id, float max_time = INFINITY, const std::string& key = "")
+    void DoPeriodicTask(float period, unsigned int id, float max_time = INFINITY, const std::string& key = "")
     {
         for (auto p : ptaskers)
         {
@@ -208,7 +213,7 @@ public:
             
             if ((*iter).cur_t >= (*iter).period * ((*iter).times + 1))
             {
-                PeriodicTask((*iter).func_id);
+                PeriodicTask((*iter).func_id, (*iter).cur_t);
                 if (iter == ptaskers.end())
                     break;
                 (*iter).times++;

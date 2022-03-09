@@ -64,6 +64,18 @@
     <Filter Include="源文件\object">
       <UniqueIdentifier>{7ea7e3ae-17de-4a99-8a8f-ad65042f6b1f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\object\entities">
+      <UniqueIdentifier>{cc4d7d88-4b48-4d15-8dd1-f07ae77075d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\objects\abilities">
+      <UniqueIdentifier>{f43f1eee-140d-4e32-9300-7bf4f2238bc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\objects\entities\monsters">
+      <UniqueIdentifier>{2c7489f0-e28d-4b73-ae9b-8dd4705833df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\components">
+      <UniqueIdentifier>{7ab653f7-7ea0-4474-acce-cec706484add}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h">
@@ -114,6 +126,33 @@
     <ClInclude Include="externfuncs.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="abilitycd.h">
+      <Filter>头文件\objects\abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="smalldot.h">
+      <Filter>头文件\objects\entities\monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="monster.h">
+      <Filter>头文件\objects\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="health.h">
+      <Filter>头文件\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>头文件\components</Filter>
+    </ClInclude>
+    <ClInclude Include="combat.h">
+      <Filter>头文件\components</Filter>
+    </ClInclude>
+    <ClInclude Include="sourcemodifierlist.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="标头.h">
+      <Filter>源文件\object\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="components.h">
+      <Filter>头文件\components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -127,6 +166,15 @@
     </ClCompile>
     <ClCompile Include="entity.cpp">
       <Filter>源文件\object</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>源文件\object\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="arrow.cpp">
+      <Filter>源文件\object\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="monster.cpp">
+      <Filter>源文件\object\entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

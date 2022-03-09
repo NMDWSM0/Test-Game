@@ -9,7 +9,17 @@ public:
 	RedBlock():
 		Entity("assets/prefabs/redblock.txt", "assets/images/redblock.png")
 	{
+		AddTag("canonwall");
+	}
+};
 
+class RedBlock_A : public RedBlock
+{
+public:
+	RedBlock_A():
+		RedBlock()
+	{
+		SetCollisionGroup(A_WORLD);
 	}
 };
 

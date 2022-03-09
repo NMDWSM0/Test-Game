@@ -9,10 +9,16 @@
 
 class World : public Object
 {
+	float x_min, x_max, y_min, y_max;
+
 	std::vector<Entity*> entities;
 
 public:
 	World(const std::string& levelname);
+
+	void SetWorldSize(float x1, float y1, float x2, float y2);
+
+	glm::vec4 GetWorldSize();
 
 	std::vector<Entity*>& GetEntities();
 
@@ -23,6 +29,8 @@ public:
 	void Clear();
 
 	void UpdateEntities(float deltaT);
+
+	void SetWorldReverse();
 };
 
 #endif

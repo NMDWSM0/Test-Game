@@ -8,7 +8,7 @@ float random()
 	return (rand() % INT_MAX) * 1.0F / INT_MAX;
 }
 
-std::vector<Entity*> CollidedObject(const Entity& ent, std::vector<Physics::COLLIDEDIRECTION>& dir);
+std::vector<Entity*> CollidedObject(const Entity& ent, std::vector<COLLIDEDIRECTION>& dir);
 std::vector<Entity*> NearObject(const Entity& ent);
 void RemoveFromWorld(Entity* ent);
 Entity& SpawnEntity(unsigned int id);

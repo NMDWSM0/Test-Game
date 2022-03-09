@@ -77,21 +77,28 @@ void Input::ProcessInput(float deltaT)
     //float deltaTime = currentFrame - lastFrame;
     //lastFrame = currentFrame;
 
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        player->Up();
+    if (!player->IsStunned())
+    {
+        if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+            player->Up();
 
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-        player->Down();
+        if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+            player->Down();
 
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS && glfwGetKey(window, GLFW_KEY_D) != GLFW_PRESS)
-        player->Left();
-    else if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS && glfwGetKey(window, GLFW_KEY_A) != GLFW_PRESS)
-        player->Right();
+        if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS && glfwGetKey(window, GLFW_KEY_D) != GLFW_PRESS)
+            player->Left();
+        else if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS && glfwGetKey(window, GLFW_KEY_A) != GLFW_PRESS)
+            player->Right();
+        else
+            player->PauseLR();
+
+        if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+            player->ShootArrow();
+    }
     else
+    {
         player->PauseLR();
-
-    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
-        player->ShootArrow();
+    }
 
     player->UpdateKeyCD(deltaT);
 }

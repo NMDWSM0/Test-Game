@@ -4,22 +4,44 @@
 
 #include "entity.h"
 #include "externfuncs.h"
+#include "abilitycd.h"
+#include "combat.h"
+#include "health.h"
 
 class Player : public Entity
 {
-	float speed = 8.0f;
+public:
+	enum FUNCNAME {
+		STOPSTUN,
+		STUNEFFECT,
+	};
 
-	float atkcd = 0.8f;
-	float cur_t = 0.81f;
+private:
 
+	float speed = 7.0f;
+
+	Ability_CD jump_cd, atk_cd;
+
+	//
 	bool right = true;
+
+	//
+	unsigned int jump_level = 0;
+
+	//
+	bool stunned = false;
+	glm::vec4 stunned_color = glm::vec4(1.0f, 1.0f, 0.1f, 0.0f);
+	float stunned_rot = 0.0f;
 
 public:
 	Player(const std::string& filename, const std::string& texturename = "");
 
 	void UpdateKeyCD(float deltaT) 
 	{
-		cur_t += deltaT;
+		if (CanJump())
+			jump_cd.Update(deltaT);
+
+		atk_cd.Update(deltaT);
 	}
 
 	void Up();
@@ -28,69 +50,32 @@ public:
 	void Right();
 	void PauseLR();
 
+	/**************************************/
+
+	void TimeTask(unsigned int id);
+
+	void EventTask(unsigned int id, DATA data = DATA{});
+
+	void PeriodicTask(unsigned int id, float time);
+
+	/**************************************/
+
+	void Draw(Shader& shader);
+
+	/**************************************/
+
+	//
+	void UpdatePosition(float deltaT);
+
+	bool CanJump();
+
 	//
 	void ShootArrow();
+
+	void Stun();
+	void StopStun();
+	void StunEffect(float time);
+	bool IsStunned() const { return stunned; }
 };
-
-Player::Player(const std::string& filename, const std::string& texturename):
-	Entity(filename, texturename)
-{
-	position.z = 0.1f;
-	SetGravityType(Physics::GRAVITATIONAL);
-	SetCollisionGroup(Physics::PLAYER);
-}
-
-
-//先暂且这样写着测试一下
-void Player::Up()
-{
-	//position.y += deltatime * speed;
-	if (OnGround())
-		physics->SetVerticalV(1.5 * speed);
-}
-
-void Player::Down()
-{
-	//position.y -= deltatime * speed;
-	//??
-}
-
-void Player::Left()
-{
-	//position.x -= deltatime * speed;
-	right = false;
-	physics->SetHorizontalV(-speed);
-}
-
-void Player::Right()
-{
-	//position.x += deltatime * speed;
-	right = true;
-	physics->SetHorizontalV(speed);
-}
-
-void Player::PauseLR()
-{
-	physics->SetHorizontalV(0);
-}
-
-void Player::ShootArrow()
-{
-	if (cur_t < atkcd)
-		return;
-	cur_t = 0.0f;
-
-	auto& arrow = SpawnEntity(10);
-	if (right)
-	{
-		arrow.SetPosition(position + glm::vec3(0.6f, 0.5f + 0.15f * random(), 0.0f));
-		arrow.GetPhysics()->GiveVelocity(glm::vec2(10.0f, 0.0f));
-	}
-	else
-	{
-		arrow.SetPosition(position + glm::vec3(-0.6f, 0.5f + 0.15f * random(), 0.0f));
-		arrow.GetPhysics()->GiveVelocity(glm::vec2(-10.0f, 0.0f));
-	}
-}
 
 #endif

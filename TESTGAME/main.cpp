@@ -34,7 +34,7 @@ int main()
     glfwWindowHint(GLFW_SAMPLES, 16); //MSAA抗锯齿
 
     //创建窗口
-    GLFWwindow* window = glfwCreateWindow(960, 960, "TESTGAME", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(1280, 960, "TESTGAME", nullptr, nullptr);
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -84,25 +84,23 @@ int main()
         TheWorld->UpdateEntities(deltaTime);
 
         //更新相机位置
-        TheCamera->UpdateCameraPos();
+        TheCamera->UpdateCameraPos(TheWorld->GetWorldSize());
         glm::vec3 uCameraPos = TheCamera->Position;
         //更新view矩阵
         glm::mat4 view = TheCamera->GetViewMatrix();
         //更新projection矩阵
-        glm::mat4 projection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, 1.0f, 25.5f);
-        //glm::mat4 projection = glm::perspective(glm::radians(thecam.Zoom), 1.0f * 1280 / 720, 0.1f, 100.0f);
+        glm::vec2 halfsize = TheCamera->GetHalfViewSize();
+        glm::mat4 projection = glm::ortho(-halfsize.x, halfsize.x, -halfsize.y, halfsize.y, 1.0f, 25.5f);
 
         //渲染指令
         //清除颜色缓冲
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);  //先随便写点
+        glClearColor(0.4f, 0.3f, 0.8f, 1.0f);  
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         mainshader.use();
         mainshader.setMat("uView", view);
         mainshader.setMat("uProjection", projection);
         
-        //mainshader.setMat("uModel", glm::mat4(1.0f));
-        //m.Draw();
         TheWorld->Draw(mainshader);
 
         //交换颜色缓冲（双缓冲）

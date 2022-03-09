@@ -14,8 +14,21 @@ World::World(const std::string& levelname)
 	}
 
 	std::string curline;
+	bool hassize = false;
 	while (std::getline(file, curline))
 	{
+		if (curline[0] == 's')
+		{
+			float x1, y1, x2, y2;
+			std::string size = curline.substr(2);
+			sscanf(size.c_str(), "%f/%f/%f/%f", &x1, &y1, &x2, &y2);
+
+			assert(x1 < x2 && y1 < y2);
+
+			SetWorldSize(x1, y1, x2, y2);
+			hassize = true;
+		}
+
 		if (curline[0] == 'e')
 		{
 			unsigned int id;
@@ -36,6 +49,22 @@ World::World(const std::string& levelname)
 			continue;
 		}
 	}
+	assert(hassize);
+}
+
+// x_min, y_min, x_max, y_max
+void World::SetWorldSize(float x1, float y1, float x2, float y2)
+{
+	x_min = x1;
+	x_max = x2;
+	y_min = y1;
+	y_max = y2;
+}
+
+// x_min, y_min, x_max, y_max
+glm::vec4 World::GetWorldSize()
+{
+	return glm::vec4(x_min, y_min, x_max, y_max);
 }
 
 Entity& World::SpawnEntity(unsigned int id)
@@ -44,12 +73,23 @@ Entity& World::SpawnEntity(unsigned int id)
 
 	switch (id)
 	{
+	//blocks
 	case 1:
 		ent = new RedBlock();
 		break;
+	case 2:
+		ent = new RedBlock_A();
+		break;
 
-	case 10:
+	//arrow
+	case 99:
 		ent = new Arrow();
+		break;
+
+	//monsters
+	case 100:
+		ent = new SmallDot();
+		break;
 	}
 
 	entities.push_back(ent);
@@ -72,10 +112,11 @@ void World::Draw(Shader& shader)
 
 void World::Clear()
 {
-	for (auto e : entities)
+	/*for (auto e : entities)
 	{
 		delete[] e;
-	}
+	}*/
+	entities.clear();
 }
 
 void World::UpdateEntities(float deltaT)
@@ -96,22 +137,59 @@ void World::UpdateEntities(float deltaT)
 	//玩家不需要在这里处理输入捏
 	ThePlayer->UpdatePosition(deltaT);
 	ThePlayer->TimeTick(deltaT);
+	
+	SetWorldReverse();
+}
+
+void World::SetWorldReverse()
+{
+	for (auto e : entities)
+	{
+		if (e->position.x < x_min)
+			e->position.x += (x_max - x_min);
+		else if (e->position.x > x_max)
+			e->position.x -= (x_max - x_min);
+
+		if (e->position.y < y_min)
+			e->position.y += (y_max - y_min);
+		else if (e->position.y > y_max)
+			e->position.y -= (y_max - y_min);
+	}
+	auto e = ThePlayer;
+	if (e->position.x < x_min)
+		e->position.x += (x_max - x_min);
+	else if (e->position.x > x_max)
+		e->position.x -= (x_max - x_min);
+
+	if (e->position.y < y_min)
+		e->position.y += (y_max - y_min);
+	else if (e->position.y > y_max)
+		e->position.y -= (y_max - y_min);
 }
 
 /*********************************************/
 
-std::vector<Entity*> CollidedObject(const Entity& ent, std::vector<Physics::COLLIDEDIRECTION>& dir)
+std::vector<Entity*> CollidedObject(const Entity& ent, std::vector<COLLIDEDIRECTION>& dir)
 {
 	std::vector<Entity*> objs;
 	dir.clear();
 	for (auto e : TheWorld->GetEntities())
 	{
-		Physics::COLLIDEDIRECTION type = e->CollideWith(ent);
-		if (type != Physics::NONE)
+		if (e == &ent)
+			continue;
+		COLLIDEDIRECTION type = ent.CollideWith(*e);
+		if (type != COLLIDEDIRECTION::NONE)
 		{
 			objs.push_back(e);
 			dir.push_back(type);
 		}
+	}
+	//单独处理player
+	COLLIDEDIRECTION type = ent.CollideWith(*ThePlayer);
+	if (type != COLLIDEDIRECTION::NONE)
+	{
+		objs.push_back(ThePlayer);
+		dir.push_back(type);
 	}
 	return objs;
 }
@@ -121,9 +199,12 @@ std::vector<Entity*> NearObject(const Entity& ent)
 	std::vector<Entity*> objs;
 	for (auto e : TheWorld->GetEntities())
 	{
-		if (e->Near(ent))
+		if (ent.Near(*e))
 			objs.push_back(e);
 	}
+	//单独处理player
+	if (ent.Near(*ThePlayer))
+		objs.push_back(ThePlayer);
 	return objs;
 }
 

@@ -151,27 +151,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="abilitycd.h" />
     <ClInclude Include="arrow.h" />
     <ClInclude Include="camera.h" />
+    <ClInclude Include="combat.h" />
+    <ClInclude Include="component.h" />
+    <ClInclude Include="components.h" />
     <ClInclude Include="entities.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="externfuncs.h" />
     <ClInclude Include="followcamera.h" />
+    <ClInclude Include="health.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="material.h" />
     <ClInclude Include="meshes.h" />
+    <ClInclude Include="monster.h" />
     <ClInclude Include="object.h" />
     <ClInclude Include="physics.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="redblock.h" />
     <ClInclude Include="shader.h" />
+    <ClInclude Include="smalldot.h" />
+    <ClInclude Include="sourcemodifierlist.h" />
     <ClInclude Include="textures.h" />
     <ClInclude Include="world.h" />
+    <ClInclude Include="标头.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\OpenGL\src\glad.c" />
+    <ClCompile Include="arrow.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="monster.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="world.cpp" />
   </ItemGroup>
   <ItemGroup>

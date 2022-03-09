@@ -19,14 +19,29 @@ uniform float uLightIntensity;
 uniform vec3 uCameraPos;
 uniform bool uHasTex;
 
+uniform bool uUseMult;
+uniform vec4 uMultColor;
+
 uniform sampler2D uTexture;
 
 /**************************************************/
-vec3 shade(void)
+vec4 shade(void)
 {
-    vec3 color = pow(vKd, vec3(2.2f));
+    //vec3 color = pow(vKd, vec3(2.2f));
+	vec3 color = pow(vKd, vec3(2.2f));
+	highp float alpha = 1.0f;
 	if (uHasTex)
-	    color = pow(texture2D(uTexture, vtexCoords).rgb, vec3(2.2f));  //gamma校正
+	{
+		vec4 ori_color = texture2D(uTexture, vtexCoords);
+		alpha = ori_color.a;
+		color = pow(ori_color.rgb, vec3(2.2f));  //gamma校正
+	}
+
+	vec3 finalcolor = color;
+	if (uUseMult)
+	{
+		finalcolor = color * (1.0f - uMultColor.a) + uMultColor.rgb * uMultColor.a;
+	}
 
 //	//环境光
 //	//vKa
@@ -48,12 +63,10 @@ vec3 shade(void)
 //    vec3 specular = vKs * light_atten_coff * spec * uLightColor;
 //
 //	return pow((ambient + diffuse + specular), vec3(1.0/2.2));
-    return pow(color, vec3(1.0/2.2));
+    return vec4(pow(finalcolor, vec3(1.0f/2.2f)), alpha);
 }
 
 void main(void)
 {
-    vec3 color = shade();
-
-	gl_FragColor = vec4(color, 1.0f);
+	gl_FragColor = shade();
 }

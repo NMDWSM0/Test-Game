@@ -71,7 +71,7 @@ Entity::Entity(const std::string& filename, const std::string& texturename)
 	meshes = new Meshes(Vvertices, materials, Vnormals, VtexCoords);
 	file.close();
 
-	physics = new Physics(Physics::ANTIGRAVITY, Physics::WORLD, glm::vec3(1.0f));
+	physics = new Physics(GRAVITYTYPE::ANTIGRAVITY, COLLISIONGROUP::WORLD, glm::vec3(1.0f));
 }
 
 void Entity::Remove()
@@ -93,13 +93,127 @@ glm::vec3 Entity::SetPosition(glm::vec3 pos)
 
 void Entity::SetScale(float scale)
 {
-	this->scale = scale;
+	this->scale = glm::vec3(scale);
+	glm::mat4 scaling = glm::scale(glm::mat4(1.0f), glm::abs(this->scale));
+	if (physics != nullptr)
+		physics->boundingbox = glm::vec3(scaling * glm::vec4(oribounding, 1.0f));
 }
 
-Physics::COLLIDEDIRECTION Entity::CollideWith(const Entity& ent) const
+void Entity::SetScale(float scale_x, float scale_y, float scale_z)
+{
+	this->scale = glm::vec3(scale_x, scale_y, scale_z);
+	glm::mat4 scaling = glm::scale(glm::mat4(1.0f), glm::abs(scale));
+	if (physics != nullptr)
+		physics->boundingbox = glm::vec3(scaling * glm::vec4(oribounding, 1.0f));
+}
+
+void Entity::SetRotation(float rot)
+{
+	rotation = rot;
+}
+
+/**********************************************************************/
+
+bool Entity::CanCollide(const Entity& ent, COLLIDEDIRECTION dir) const
+{
+	float deltay;
+	switch (physics->collisiongroup)
+	{
+	case COLLISIONGROUP::WORLD:
+
+		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING)
+			return true;
+		return false;
+		break;
+
+	case COLLISIONGROUP::A_WORLD:
+
+		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::A_WORLD)
+			return true;
+		return false;
+		break;
+
+	//这里写的都是主动碰撞别人的时候的属性，A_WORLD组都不会动（或者强行运动），对player直接返回true也未尝不可
+
+	case COLLISIONGROUP::ARROW:
+
+		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::ARROW)
+			return true;
+		return false;
+		break;
+
+	case COLLISIONGROUP::MOVABLE:
+
+		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING)
+			return true;
+		return false;
+		break;
+
+	case COLLISIONGROUP::PLAYER:
+		//printf("111111\n");
+		if (ent.physics->collisiongroup == COLLISIONGROUP::WORLD)
+		{
+			//if (dir != COLLIDEDIRECTION::VERTICAL)
+			//	return true;
+			//deltay = position.y - physics->boundingbox.y / 2.0f - (ent.position.y + ent.physics->boundingbox.y / 2.0f);
+			//if (deltay > 0.0f)
+			//	//在上面
+			//	return true;
+			//if (deltay > -0.03f * fabs(physics->velocity.y))
+			//{
+			//	if (physics->GetVelocity().y >= 0.0f)
+			//		return false;
+			//	return true;
+			//}
+			//return false;
+			return true;
+		}
+		if (ent.physics->collisiongroup == COLLISIONGROUP::A_WORLD || ent.physics->collisiongroup == COLLISIONGROUP::ARROW)
+		{
+			deltay = position.y - physics->boundingbox.y / 2.0f - (ent.position.y + ent.physics->boundingbox.y / 2.0f);
+			if (deltay > 0.0f)
+				//在上面
+				return true;
+			if (deltay > -0.03f * fabs(physics->velocity.y))
+			{
+				if (physics->GetVelocity().y >= 0.0f)
+					return false;
+				return true;
+			}
+			return false;
+		}
+		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::PLAYER)
+			return true;
+		return false;
+		break;
+
+	case COLLISIONGROUP::ENTITIES:
+
+		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::ENTITIES)
+			return true;
+		return false;
+		break;
+
+	case COLLISIONGROUP::ENEMIES:
+
+		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::ENEMIES)
+			return true;
+		return false;
+		break;
+
+	case COLLISIONGROUP::NOTHING:
+
+		return false;
+		break;
+
+	}
+	return false;
+}
+
+COLLIDEDIRECTION Entity::CollideWith(const Entity& ent) const
 {
 	if (physics == nullptr || ent.physics == nullptr || &ent == this)
-		return Physics::NONE;
+		return COLLIDEDIRECTION::NONE;
 	float deltax = fabs(position.x - ent.position.x);
 	float deltay = fabs(position.y - ent.position.y);
 
@@ -107,18 +221,18 @@ Physics::COLLIDEDIRECTION Entity::CollideWith(const Entity& ent) const
 	float boundy = (ent.physics->boundingbox.y + physics->boundingbox.y) / 2.0f;
 
 	bool c_x = false, c_y = false;
-	if (boundx - deltax > 0.1f && boundy - deltay > 0.0f)
+	if (boundx - deltax > 0.1f && boundy - deltay > 0.0f && CanCollide(ent, COLLIDEDIRECTION::VERTICAL))
 		c_y = true;
-	if (boundy - deltay > 0.1f && boundx - deltax > 0.0f)
+	if (boundy - deltay > 0.1f && boundx - deltax > 0.0f && CanCollide(ent, COLLIDEDIRECTION::HORIZONTAL))
 		c_x = true;
 	if (!c_x && !c_y)
-		return Physics::NONE;
+		return COLLIDEDIRECTION::NONE;
 	else if (c_x && !c_y)
-		return Physics::HORIZONTAL;
+		return COLLIDEDIRECTION::HORIZONTAL;
 	else if (!c_x && c_y)
-		return Physics::VERTICAL;
+		return COLLIDEDIRECTION::VERTICAL;
 	else
-		return Physics::ALLDIR;
+		return COLLIDEDIRECTION::ALLDIR;
 }
 
 bool Entity::Near(const Entity& ent) const
@@ -141,8 +255,11 @@ bool Entity::OnGround() const
 	std::vector<Entity*> nearobj = NearObject(*this);
 	for (auto e : nearobj)
 	{
-		if ((position.y - e->position.y > 0 && position.y - e->position.y < 1.01f) && fabs(position.x - e->position.x) + 0.01f < (e->physics->boundingbox.x + physics->boundingbox.x) / 2.0f)
+		float deltay = position.y - physics->boundingbox.y / 2.0f - (e->position.y + e->physics->boundingbox.y / 2.0f);
+		if (deltay > -0.1f && deltay < 0.01f)
 			return true;
+		/*if ((position.y - e->position.y > 0 && position.y - e->position.y < 1.01f) && fabs(position.x - e->position.x) + 0.01f < (e->physics->boundingbox.x + physics->boundingbox.x) / 2.0f)
+			return true;*/
 	}
 	return false;
 }
@@ -155,7 +272,7 @@ void Entity::UpdatePosition(float deltaT)
 	glm::vec3 targetpos = position + glm::vec3(deltaT * physics->GetVelocity().x, deltaT * physics->GetVelocity().y, 0.0f);
 	SetPosition(targetpos);
 
-	std::vector<Physics::COLLIDEDIRECTION> dir;
+	std::vector<COLLIDEDIRECTION> dir;
 	std::vector<Entity*> collideobj = CollidedObject(*this, dir);
 	/*if (collideobj != nullptr)
 	{
@@ -167,17 +284,17 @@ void Entity::UpdatePosition(float deltaT)
 		bool hasc_x = false, hasc_y = false;
 		for (auto t : dir)
 		{
-			if (t == Physics::HORIZONTAL)
+			if (t == COLLIDEDIRECTION::HORIZONTAL)
 			{
 				physics->SetHorizontalV(0.0f);
 				hasc_x = true;
 			}
-			if (t == Physics::VERTICAL)
+			if (t == COLLIDEDIRECTION::VERTICAL)
 			{
 				physics->SetVelocity(glm::vec2(0.0f, 0.0f));
 				hasc_y = true;
 			}
-			if (t == Physics::ALLDIR)
+			if (t == COLLIDEDIRECTION::ALLDIR)
 			{
 				physics->SetVelocity(glm::vec2(0.0f, 0.0f));
 				hasc_x = true;
@@ -191,10 +308,10 @@ void Entity::UpdatePosition(float deltaT)
 		else
 			SetPosition(oripos);
 
-		PushEvent("collide");
+		PushEvent("collide", DATA{ collideobj[0] });
 	}
 
-	if (physics->gravtype == Physics::GRAVITATIONAL && OnGround())
+	if (physics->gravtype == GRAVITYTYPE::GRAVITATIONAL && OnGround())
 	{
 		physics->onground = true;
 	}
@@ -207,7 +324,11 @@ void Entity::UpdatePosition(float deltaT)
 
 void Entity::Draw(Shader& shader)
 {
-	glm::mat4 model = glm::translate(glm::mat4(1.0f), position);
+	glm::mat4 scaling = glm::scale(glm::mat4(1.0f), scale);
+	glm::mat4 rotating = glm::rotate(glm::mat4(1.0f), rotation, glm::vec3(0.0f, 0.0f, 1.0f));
+	glm::mat4 translating = glm::translate(glm::mat4(1.0f), position);
+
+	glm::mat4 model = translating * rotating * scaling;
 
 	shader.setMat("uModel", model);
 	if (textures != nullptr)
@@ -227,11 +348,14 @@ void Entity::Draw(Shader& shader)
 Entity::~Entity()
 {
 	if (meshes)
-		delete[] meshes;
-	if (textures)
+	{
+		meshes->Terminate();
+		//delete[] meshes;
+	}
+	/*if (textures)
 		delete[] textures;
 	if (materials)
 		delete[] materials;
 	if (physics)
-		delete[] physics;
+		delete[] physics;*/
 }
