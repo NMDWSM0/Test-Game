@@ -18,6 +18,8 @@ public:
 
 	void SetWorldSize(float x1, float y1, float x2, float y2);
 
+	float GetWorldExpansion();
+
 	glm::vec4 GetWorldSize();
 
 	std::vector<Entity*>& GetEntities();

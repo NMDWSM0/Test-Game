@@ -22,6 +22,7 @@ enum COLLISIONGROUP {
 	MOVABLE, //可移动的方块,一般是机关箱子等，会和PLAYER发生一般的碰撞，但会被推着走；也会和WORLD碰撞而停下；和其它几个有碰撞但不会动
 	PLAYER,  //玩家，最特殊的物体，会和WORLD, MOVABLE, PLAYER, ENTITIES, ENEMIES碰撞；当和WORLD碰撞时，特殊在从下往上的情况并不发生垂直碰撞；
 			 //和MOVABLE碰撞时正常，且会推着走；和ENTITIES和ENEMIES碰撞时正常，且会触发一些效果（比如死亡眩晕等等）
+    INV_PLAYER,//无敌状态的玩家，除了不和怪物以及箭矢碰撞以外，其它和普通玩家一致  
 	ENTITIES,//其它实体，诸如各种道具，BOSS发射的炸弹等等，这些实体更加遵循物理规律，
 			 //比如弹跳，摩擦；它们与WORLD和MOVABLE碰撞时会遵循一点点物理规律（但不会推动MOVABLE），与PLAYER碰撞会有特殊效果，和ENEMIES碰撞也有（取决于具体是什么）
     ENEMIES, //敌人（除了漂浮的BOSS），和NETITIES的碰撞属性基本一样，区别在于没有遵循什么物理规律
@@ -64,6 +65,8 @@ public:
 	glm::vec2 GiveVelocity(glm::vec2 v);
 
 	glm::vec2 GetVelocity() const { return velocity; }
+
+	bool IsStatic();
 
 	void UpdateVelocity(float deltaT);
 };
@@ -109,6 +112,11 @@ glm::vec2 Physics::GiveVelocity(glm::vec2 v)
 	velocity += v;
 	CutVelocity();
 	return velocity;
+}
+
+bool Physics::IsStatic()
+{
+	return fabs(velocity.x) < 0.001f && fabs(velocity.y) < 0.001f;
 }
 
 void Physics::UpdateVelocity(float deltaT)

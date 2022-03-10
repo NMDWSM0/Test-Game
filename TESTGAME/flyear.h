@@ -1,10 +1,9 @@
 #pragma once
-//#ifndef SAMLLDOT_H
-#define SAMLLDOT_H
 
 #include "monster.h"
 
-class SmallDot : public Monster
+class FlyEar :
+    public Monster
 {
 public:
 	enum FUNCNAME {
@@ -18,7 +17,7 @@ public:
 	float speed = 3.0f;
 
 public:
-	SmallDot();
+	FlyEar();
 
 	/**************************************/
 
@@ -33,4 +32,3 @@ public:
 	void OnCollide(DATA data);
 };
 
-//#endif // !SAMLLDOT_H

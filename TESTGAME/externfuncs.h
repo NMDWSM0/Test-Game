@@ -2,16 +2,19 @@
 #ifndef EXTERNFUNCS_H
 #define EXTERNFUNCS_H
 #include "entity.h"
+#include <time.h>
 
 float random()
 {
-	return (rand() % INT_MAX) * 1.0F / INT_MAX;
+	srand((unsigned)time(nullptr));
+	return (rand() % 360) * 1.0F / 360;
 }
 
 std::vector<Entity*> CollidedObject(const Entity& ent, std::vector<COLLIDEDIRECTION>& dir);
 std::vector<Entity*> NearObject(const Entity& ent);
 void RemoveFromWorld(Entity* ent);
 Entity& SpawnEntity(unsigned int id);
-//std::vector<Entity*> FindEntities(float x, float y, float z, float radius, std::vector<const std::string&> MUSTtags, std::vector<const std::string&> MUSTNOTtags, std::vector<const std::string&> MUSTOFONEtags);
+std::vector<Entity*> FindEntities(float x, float y, float z, float radius, const std::vector<std::string>& MUSTtags, const std::vector<std::string>& MUSTNOTtags = std::vector<std::string>{}, const std::vector<std::string>& MUSTOFONEtags = std::vector<std::string>{});
+Entity* FindCloestEntityWithTag(float x, float y, float z, std::string tag);
 
 #endif // !EXTERNFUNCS_H

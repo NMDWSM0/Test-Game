@@ -153,13 +153,15 @@
   <ItemGroup>
     <ClInclude Include="abilitycd.h" />
     <ClInclude Include="arrow.h" />
+    <ClInclude Include="brain.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="combat.h" />
     <ClInclude Include="component.h" />
-    <ClInclude Include="components.h" />
     <ClInclude Include="entities.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="externfuncs.h" />
+    <ClInclude Include="flyear.h" />
+    <ClInclude Include="flyearbrain.h" />
     <ClInclude Include="followcamera.h" />
     <ClInclude Include="health.h" />
     <ClInclude Include="input.h" />
@@ -172,18 +174,21 @@
     <ClInclude Include="redblock.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="smalldot.h" />
+    <ClInclude Include="smalldotbrain.h" />
     <ClInclude Include="sourcemodifierlist.h" />
     <ClInclude Include="textures.h" />
     <ClInclude Include="world.h" />
-    <ClInclude Include="标头.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\OpenGL\src\glad.c" />
     <ClCompile Include="arrow.cpp" />
     <ClCompile Include="entity.cpp" />
+    <ClCompile Include="externfuncs.cpp" />
+    <ClCompile Include="flyear.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="monster.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="smalldot.cpp" />
     <ClCompile Include="world.cpp" />
   </ItemGroup>
   <ItemGroup>

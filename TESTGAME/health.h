@@ -20,7 +20,7 @@ public:
 		return max_health;
 	}
 
-	void SetCurrentHealth(float current);
+	void SetCurrentHealth(float current, DATA data = DATA{});
 
 	float GetCurrenthealth()
 	{
@@ -32,7 +32,7 @@ public:
 		return current_health / max_health;
 	}
 
-	float DoDelta(float delta);
+	float DoDelta(float delta, DATA data = DATA{});
 
 	bool IsDead()
 	{
@@ -69,7 +69,8 @@ void Health::SetMaxHealth(float max, bool withpercent)
 	SetCurrentHealth(per * max);
 }
 
-void Health::SetCurrentHealth(float current)
+// data: attacker(afflicter)
+void Health::SetCurrentHealth(float current, DATA data)
 {
 	if (IsDead())
 		return;
@@ -80,11 +81,12 @@ void Health::SetCurrentHealth(float current)
 	inst->PushEvent("healthdelta", DATA{ current_health - ori_health, current_health }); //delta, current
 	if (IsDead())
 	{
-		inst->PushEvent("death");
+		inst->PushEvent("death", data); // data: attacker(afflicter)
 	}
 }
 
-float Health::DoDelta(float delta)
+// data: attacker(afflicter)
+float Health::DoDelta(float delta, DATA data)
 {
 	if (IsDead())
 		return 0.0f;
@@ -92,7 +94,7 @@ float Health::DoDelta(float delta)
 		return 0.0f;
 
 	float ori_health = current_health;
-	SetCurrentHealth(ori_health + delta);
+	SetCurrentHealth(ori_health + delta, data);
 	float real_delta = current_health - ori_health;
 	return real_delta;
 }

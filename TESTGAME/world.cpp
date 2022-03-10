@@ -67,6 +67,11 @@ glm::vec4 World::GetWorldSize()
 	return glm::vec4(x_min, y_min, x_max, y_max);
 }
 
+float World::GetWorldExpansion()
+{
+	return glm::length(glm::vec2(x_max - x_min, y_max - y_min));
+}
+
 Entity& World::SpawnEntity(unsigned int id)
 {
 	Entity* ent;
@@ -89,6 +94,9 @@ Entity& World::SpawnEntity(unsigned int id)
 	//monsters
 	case 100:
 		ent = new SmallDot();
+		break;
+	case 101:
+		ent = new FlyEar();
 		break;
 	}
 
@@ -123,20 +131,10 @@ void World::UpdateEntities(float deltaT)
 {
 	for (auto e : entities)
 	{
-		//if 有 brains 按照AI行动 更新velocity
-		
-		//更新时间时间
-		e->TimeTick(deltaT);
-
-		//更新物理
-		if (e->HasPhysics())
-		{
-			e->UpdatePosition(deltaT);
-		}
+		e->Update(deltaT);
 	}
 	//玩家不需要在这里处理输入捏
-	ThePlayer->UpdatePosition(deltaT);
-	ThePlayer->TimeTick(deltaT);
+	ThePlayer->Update(deltaT);
 	
 	SetWorldReverse();
 }
@@ -145,6 +143,8 @@ void World::SetWorldReverse()
 {
 	for (auto e : entities)
 	{
+		if (e->HasTag("FX"))
+			continue;
 		if (e->position.x < x_min)
 			e->position.x += (x_max - x_min);
 		else if (e->position.x > x_max)
@@ -165,95 +165,4 @@ void World::SetWorldReverse()
 		e->position.y += (y_max - y_min);
 	else if (e->position.y > y_max)
 		e->position.y -= (y_max - y_min);
-}
-
-/*********************************************/
-
-std::vector<Entity*> CollidedObject(const Entity& ent, std::vector<COLLIDEDIRECTION>& dir)
-{
-	std::vector<Entity*> objs;
-	dir.clear();
-	for (auto e : TheWorld->GetEntities())
-	{
-		if (e == &ent)
-			continue;
-		COLLIDEDIRECTION type = ent.CollideWith(*e);
-		if (type != COLLIDEDIRECTION::NONE)
-		{
-			objs.push_back(e);
-			dir.push_back(type);
-		}
-	}
-	//单独处理player
-	COLLIDEDIRECTION type = ent.CollideWith(*ThePlayer);
-	if (type != COLLIDEDIRECTION::NONE)
-	{
-		objs.push_back(ThePlayer);
-		dir.push_back(type);
-	}
-	return objs;
-}
-
-std::vector<Entity*> NearObject(const Entity& ent)
-{
-	std::vector<Entity*> objs;
-	for (auto e : TheWorld->GetEntities())
-	{
-		if (ent.Near(*e))
-			objs.push_back(e);
-	}
-	//单独处理player
-	if (ent.Near(*ThePlayer))
-		objs.push_back(ThePlayer);
-	return objs;
-}
-
-void RemoveFromWorld(Entity* ent)
-{
-	for (auto iter = TheWorld->GetEntities().begin(); iter != TheWorld->GetEntities().end();)
-	{
-		if (*iter == ent)
-		{
-			iter = TheWorld->GetEntities().erase(iter);
-			/*if (ent)
-				delete[] ent;*/
-		}
-		else
-			++iter;
-	}
-}
-
-Entity& SpawnEntity(unsigned int id)
-{
-	return TheWorld->SpawnEntity(id);
-}
-
-std::vector<Entity*> FindEntities(float x, float y, float z, float radius, std::vector<std::string>& MUSTtags, std::vector<std::string>& MUSTNOTtags, std::vector<std::string>& MUSTOFONEtags)
-{
-	std::vector<Entity*> objs;
-	for (auto e : TheWorld->GetEntities())
-	{
-		if (sqrtf(pow(e->position.x - x, 2) + pow(e->position.y - y, 2) + pow(e->position.z - z, 2)) >= radius)
-			continue;
-		for (auto t : MUSTtags)
-		{
-			if (!e->HasTag(t))
-				goto back;
-		}
-		for (auto t : MUSTNOTtags)
-		{
-			if (e->HasTag(t))
-				goto back;
-		}
-		for (auto t : MUSTOFONEtags)
-		{
-			if (e->HasTag(t))
-			{
-				objs.push_back(e);
-				goto back;
-			}
-		}
-	back:;
-	}
-	return objs;
 }

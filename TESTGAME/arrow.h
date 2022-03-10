@@ -11,14 +11,14 @@ class Arrow : public Entity
 
 	enum FUNCNAME
 	{
-		REMOVE = 0,
-		ONCOLLIDE = 1,
-		TWINT = 2,
-		UPDATEROTATION = 3,
-		STARTTWINT = 4,
-		COLLIDEWITHPLAYER = 5,
+		REMOVE,
+		ONCOLLIDE,
+		TWINT,
 
-		RMV_LISTENER_Twint_Remove = 99,
+		STARTTWINT,
+		COLLIDEWITHPLAYER,
+
+		RMV_LISTENER_Twint_Remove,
 	};
 
 	bool lighted = true;
@@ -38,7 +38,7 @@ protected:
 
 	void PeriodicTask(unsigned int id, float time);
 	/*************************************/
-	void UpdateRotation();
+	void UpdateRotation(float deltaT);
 
 	COLLIDEDIRECTION CollideWith(const Entity& ent) const;
 	/*************************************/

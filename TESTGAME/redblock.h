@@ -9,6 +9,7 @@ public:
 	RedBlock():
 		Entity("assets/prefabs/redblock.txt", "assets/images/redblock.png")
 	{
+		AddTag("blockers");
 		AddTag("canonwall");
 	}
 };

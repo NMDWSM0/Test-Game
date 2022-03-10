@@ -14,6 +14,10 @@ public:
 	enum FUNCNAME {
 		STOPSTUN,
 		STUNEFFECT,
+		
+		ONATTACKED,
+		TWINT,
+		STOPINVINCIBLE,
 	};
 
 private:
@@ -33,6 +37,9 @@ private:
 	glm::vec4 stunned_color = glm::vec4(1.0f, 1.0f, 0.1f, 0.0f);
 	float stunned_rot = 0.0f;
 
+	//
+	bool twint_on = true;
+
 public:
 	Player(const std::string& filename, const std::string& texturename = "");
 
@@ -50,6 +57,8 @@ public:
 	void Right();
 	void PauseLR();
 
+	bool CanJump();
+
 	/**************************************/
 
 	void TimeTask(unsigned int id);
@@ -60,22 +69,27 @@ public:
 
 	/**************************************/
 
+	COLLIDEDIRECTION CollideWith(const Entity& ent) const;
+
+	void UpdatePosition(float deltaT);
+	void UpdateScaling(float deltaT);
+
 	void Draw(Shader& shader);
 
 	/**************************************/
-
-	//
-	void UpdatePosition(float deltaT);
-
-	bool CanJump();
-
 	//
 	void ShootArrow();
 
+	//
 	void Stun();
 	void StopStun();
 	void StunEffect(float time);
 	bool IsStunned() const { return stunned; }
+
+	//
+	void OnAttacked(DATA data);
+	void StopInvincible();
+	void Twint();
 };
 
 #endif

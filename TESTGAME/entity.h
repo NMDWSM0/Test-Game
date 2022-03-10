@@ -7,7 +7,6 @@
 #include "material.h"
 #include "textures.h"
 #include "physics.h"
-//#include "components.h"
 
 class Combat;
 class Health;
@@ -62,12 +61,21 @@ public:
 			physics->boundingbox = glm::vec3(scaling * glm::vec4(oribounding, 1.0f));
 	}
 
+	void SetCollisionGroup(COLLISIONGROUP group)
+	{
+		physics->collisiongroup = group;
+	}
+
 	bool HasPhysics() const 
 	{ 
 		return physics != nullptr; 
 	}
 
 	bool CanCollide(const Entity& ent, COLLIDEDIRECTION dir = COLLIDEDIRECTION::ALLDIR) const;
+
+	bool Near(const Entity& ent) const;
+
+	bool OnGround() const;
 
 	virtual COLLIDEDIRECTION CollideWith(const Entity& ent) const;
 
@@ -81,16 +89,29 @@ public:
 
 	void SetRotation(float rot);
 
-	bool Near(const Entity& ent) const;
+	virtual void UpdatePosition(float deltaT);
 
-	bool OnGround() const;
-
-	void SetCollisionGroup(COLLISIONGROUP group) 
+	virtual void UpdateRotation(float deltaT)
 	{
-		physics->collisiongroup = group; 
+
 	}
 
-	virtual void UpdatePosition(float deltaT);
+	virtual void UpdateScaling(float deltaT)
+	{
+
+	}
+
+	virtual void Update(float deltaT)
+	{
+		TimeTick(deltaT);
+
+		if (HasPhysics())
+		{
+			UpdatePosition(deltaT);
+			UpdateRotation(deltaT);
+			UpdateScaling(deltaT);
+		}
+	}
 
 	//shade
 	/********************************/

@@ -2,7 +2,7 @@
 #include "externfuncs.h"
 
 Entity::Entity() :
-	meshes(nullptr), textures(nullptr), materials(nullptr), physics(nullptr)
+	meshes(nullptr), textures(nullptr), materials(nullptr), physics(nullptr), combat(nullptr), health(nullptr)
 {
 	position = glm::vec3(0.0f);
 }
@@ -72,6 +72,9 @@ Entity::Entity(const std::string& filename, const std::string& texturename)
 	file.close();
 
 	physics = new Physics(GRAVITYTYPE::ANTIGRAVITY, COLLISIONGROUP::WORLD, glm::vec3(1.0f));
+
+	combat = nullptr;
+	health = nullptr;
 }
 
 void Entity::Remove()
@@ -150,22 +153,8 @@ bool Entity::CanCollide(const Entity& ent, COLLIDEDIRECTION dir) const
 		break;
 
 	case COLLISIONGROUP::PLAYER:
-		//printf("111111\n");
 		if (ent.physics->collisiongroup == COLLISIONGROUP::WORLD)
 		{
-			//if (dir != COLLIDEDIRECTION::VERTICAL)
-			//	return true;
-			//deltay = position.y - physics->boundingbox.y / 2.0f - (ent.position.y + ent.physics->boundingbox.y / 2.0f);
-			//if (deltay > 0.0f)
-			//	//在上面
-			//	return true;
-			//if (deltay > -0.03f * fabs(physics->velocity.y))
-			//{
-			//	if (physics->GetVelocity().y >= 0.0f)
-			//		return false;
-			//	return true;
-			//}
-			//return false;
 			return true;
 		}
 		if (ent.physics->collisiongroup == COLLISIONGROUP::A_WORLD || ent.physics->collisiongroup == COLLISIONGROUP::ARROW)
@@ -187,6 +176,30 @@ bool Entity::CanCollide(const Entity& ent, COLLIDEDIRECTION dir) const
 		return false;
 		break;
 
+	case COLLISIONGROUP::INV_PLAYER:
+		if (ent.physics->collisiongroup == COLLISIONGROUP::WORLD)
+		{
+			return true;
+		}
+		if (ent.physics->collisiongroup == COLLISIONGROUP::A_WORLD || ent.physics->collisiongroup == COLLISIONGROUP::ARROW)
+		{
+			deltay = position.y - physics->boundingbox.y / 2.0f - (ent.position.y + ent.physics->boundingbox.y / 2.0f);
+			if (deltay > 0.0f)
+				//在上面
+				return true;
+			if (deltay > -0.03f * fabs(physics->velocity.y))
+			{
+				if (physics->GetVelocity().y >= 0.0f)
+					return false;
+				return true;
+			}
+			return false;
+		}
+		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::PLAYER && ent.physics->collisiongroup != COLLISIONGROUP::ENEMIES)
+			return true;
+		return false;
+		break;
+
 	case COLLISIONGROUP::ENTITIES:
 
 		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::ENTITIES)
@@ -196,7 +209,7 @@ bool Entity::CanCollide(const Entity& ent, COLLIDEDIRECTION dir) const
 
 	case COLLISIONGROUP::ENEMIES:
 
-		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::ENEMIES)
+		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::ENEMIES && ent.physics->collisiongroup != COLLISIONGROUP::INV_PLAYER)
 			return true;
 		return false;
 		break;
@@ -210,6 +223,7 @@ bool Entity::CanCollide(const Entity& ent, COLLIDEDIRECTION dir) const
 	return false;
 }
 
+//碰撞默认函数，子类可以自行覆盖方法
 COLLIDEDIRECTION Entity::CollideWith(const Entity& ent) const
 {
 	if (physics == nullptr || ent.physics == nullptr || &ent == this)
@@ -221,10 +235,12 @@ COLLIDEDIRECTION Entity::CollideWith(const Entity& ent) const
 	float boundy = (ent.physics->boundingbox.y + physics->boundingbox.y) / 2.0f;
 
 	bool c_x = false, c_y = false;
-	if (boundx - deltax > 0.1f && boundy - deltay > 0.0f && CanCollide(ent, COLLIDEDIRECTION::VERTICAL))
+	//下面两个参数设的越小，越容易碰撞(设定为负数时即便还未差一点也会被判定为碰撞，这种情况一般用来识别攻击到敌人)
+	if (boundx - deltax > 0.01f && boundy - deltay > 0.0f && CanCollide(ent, COLLIDEDIRECTION::VERTICAL))
 		c_y = true;
-	if (boundy - deltay > 0.1f && boundx - deltax > 0.0f && CanCollide(ent, COLLIDEDIRECTION::HORIZONTAL))
+	if (boundy - deltay > 0.01f && boundx - deltax > 0.0f && CanCollide(ent, COLLIDEDIRECTION::HORIZONTAL))
 		c_x = true;
+
 	if (!c_x && !c_y)
 		return COLLIDEDIRECTION::NONE;
 	else if (c_x && !c_y)
@@ -264,21 +280,19 @@ bool Entity::OnGround() const
 	return false;
 }
 
+//此为基本流程，子类可以自行覆盖方法
 void Entity::UpdatePosition(float deltaT)
 {
 	if (physics == nullptr)
 		return;
 	glm::vec3 oripos = position;
 	glm::vec3 targetpos = position + glm::vec3(deltaT * physics->GetVelocity().x, deltaT * physics->GetVelocity().y, 0.0f);
+	
 	SetPosition(targetpos);
 
 	std::vector<COLLIDEDIRECTION> dir;
 	std::vector<Entity*> collideobj = CollidedObject(*this, dir);
-	/*if (collideobj != nullptr)
-	{
-		SetPosition((oripos + targetpos) / 2.0f);
-		physics->SetVelocity(glm::vec2(0.0f));
-	}*/
+	
 	if (collideobj.size() > 0)
 	{
 		bool hasc_x = false, hasc_y = false;
@@ -308,7 +322,7 @@ void Entity::UpdatePosition(float deltaT)
 		else
 			SetPosition(oripos);
 
-		PushEvent("collide", DATA{ collideobj[0] });
+		PushEvent("collide", DATA{ collideobj, dir });
 	}
 
 	if (physics->gravtype == GRAVITYTYPE::GRAVITATIONAL && OnGround())
@@ -318,8 +332,7 @@ void Entity::UpdatePosition(float deltaT)
 	else
 		physics->onground = false;
 
-	if (!physics->onground)
-		physics->UpdateVelocity(deltaT);
+	physics->UpdateVelocity(deltaT);
 }
 
 void Entity::Draw(Shader& shader)

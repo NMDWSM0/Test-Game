@@ -73,8 +73,17 @@
     <Filter Include="头文件\objects\entities\monsters">
       <UniqueIdentifier>{2c7489f0-e28d-4b73-ae9b-8dd4705833df}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\components">
+    <Filter Include="头文件\objects\components">
       <UniqueIdentifier>{7ab653f7-7ea0-4474-acce-cec706484add}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\object\entities\monsters">
+      <UniqueIdentifier>{1fd2365c-f999-4e0d-a25f-fa6a2d5a7b4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\objects\entities\blockers">
+      <UniqueIdentifier>{1cb5596f-c25d-4591-8ecd-a573df0b460f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\objects\brains">
+      <UniqueIdentifier>{aaaecc23-c89f-4f7a-b307-088de2c60fee}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -111,12 +120,6 @@
     <ClInclude Include="entity.h">
       <Filter>头文件\objects</Filter>
     </ClInclude>
-    <ClInclude Include="redblock.h">
-      <Filter>头文件\objects\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="entities.h">
-      <Filter>头文件\objects</Filter>
-    </ClInclude>
     <ClInclude Include="physics.h">
       <Filter>头文件\physics</Filter>
     </ClInclude>
@@ -136,22 +139,34 @@
       <Filter>头文件\objects\entities</Filter>
     </ClInclude>
     <ClInclude Include="health.h">
-      <Filter>头文件\components</Filter>
-    </ClInclude>
-    <ClInclude Include="component.h">
-      <Filter>头文件\components</Filter>
+      <Filter>头文件\objects\components</Filter>
     </ClInclude>
     <ClInclude Include="combat.h">
-      <Filter>头文件\components</Filter>
+      <Filter>头文件\objects\components</Filter>
     </ClInclude>
     <ClInclude Include="sourcemodifierlist.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="标头.h">
-      <Filter>源文件\object\entities</Filter>
+    <ClInclude Include="entities.h">
+      <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="components.h">
-      <Filter>头文件\components</Filter>
+    <ClInclude Include="redblock.h">
+      <Filter>头文件\objects\entities\blockers</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>头文件\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="smalldotbrain.h">
+      <Filter>头文件\objects\brains</Filter>
+    </ClInclude>
+    <ClInclude Include="brain.h">
+      <Filter>头文件\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="flyear.h">
+      <Filter>头文件\objects\entities\monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="flyearbrain.h">
+      <Filter>头文件\objects\brains</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +190,15 @@
     </ClCompile>
     <ClCompile Include="monster.cpp">
       <Filter>源文件\object\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="externfuncs.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="smalldot.cpp">
+      <Filter>源文件\object\entities\monsters</Filter>
+    </ClCompile>
+    <ClCompile Include="flyear.cpp">
+      <Filter>源文件\object\entities\monsters</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -10,5 +10,6 @@
 
 //monsters
 #include "smalldot.h"
+#include "flyear.h"
 
 #endif // !ENTITIES_H

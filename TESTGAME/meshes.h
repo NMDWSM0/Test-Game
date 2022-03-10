@@ -4,7 +4,6 @@
 
 #include <vector>
 #include "material.h"
-#include "obj_loader.h"
 #include <GLFW/glfw3.h>
 
 class Meshes

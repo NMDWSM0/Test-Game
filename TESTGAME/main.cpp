@@ -53,7 +53,7 @@ int main()
     }
     
     //创建玩家类
-    ThePlayer = new Player("assets/testplayer.txt");
+    ThePlayer = new Player("assets/testplayer.txt", "assets/images/testplayer.png");
     //创建输入类
     TheInput = new Input(window, ThePlayer);
     //创建摄像机类
@@ -90,7 +90,7 @@ int main()
         glm::mat4 view = TheCamera->GetViewMatrix();
         //更新projection矩阵
         glm::vec2 halfsize = TheCamera->GetHalfViewSize();
-        glm::mat4 projection = glm::ortho(-halfsize.x, halfsize.x, -halfsize.y, halfsize.y, 1.0f, 25.5f);
+        glm::mat4 projection = glm::ortho(-halfsize.x, halfsize.x, -halfsize.y, halfsize.y, 1.0f, 35.0f);
 
         //渲染指令
         //清除颜色缓冲

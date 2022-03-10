@@ -95,13 +95,13 @@ void Combat::GetAttacked(Entity* attacker, float dmg)
 		blocked = true;
 	else
 	{
-		damageresolved = - inst->health->DoDelta(-dmg);
+		damageresolved = -inst->health->DoDelta(-dmg, DATA{ attacker });
 	}
 
 	if (!blocked)
 	{
-		attacker->PushEvent("onhitother", DATA{ inst, dmg, damageresolved });  //target, damage, damageresolved
-		inst->PushEvent("onattacked", DATA{ attacker, dmg, damageresolved });  //attacker, damage, damageresolved
+		attacker->PushEvent("hitother", DATA{ inst, dmg, damageresolved });  //target, damage, damageresolved
+		inst->PushEvent("attacked", DATA{ attacker, dmg, damageresolved });  //attacker, damage, damageresolved
 	}
 	else
 	{

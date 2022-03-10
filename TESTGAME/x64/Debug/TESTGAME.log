@@ -1,11 +1,5 @@
-﻿  player.cpp
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\obj_loader.h(945,33): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\meshes.h(179,35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\player.cpp(6,1): warning C4305: “参数”: 从“double”到“float”截断
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\player.cpp(28,30): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\player.cpp(66,2): warning C4060: switch 语句没有包含“case”或“default”标签
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\player.cpp(215,30): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\player.cpp(215,43): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+﻿  world.cpp
+C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\meshes.h(178,35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/FORCE”规范)
 entity.obj : warning LNK4006: "public: __cdecl Material::Material(struct glm::vec<3,float,0>,struct glm::vec<3,float,0>,struct glm::vec<3,float,0>,float,float,float)" (??0Material@@QEAA@U?$vec@$02M$0A@@glm@@00MMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: __cdecl Material::Material(struct glm::vec<3,float,0>,float,float,struct glm::vec<3,float,0>)" (??0Material@@QEAA@U?$vec@$02M$0A@@glm@@MM0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
@@ -15,24 +9,16 @@ entity.obj : warning LNK4006: "public: __cdecl Physics::Physics(enum GRAVITYTYPE
 entity.obj : warning LNK4006: "public: __cdecl Shader::Shader(char const *,char const *)" (??0Shader@@QEAA@PEBD0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: __cdecl Texture::Texture(char const *,enum TextureType,unsigned int)" (??0Texture@@QEAA@PEBDW4TextureType@@I@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: __cdecl Meshes::~Meshes(void)" (??1Meshes@@QEAA@XZ) 已在 arrow.obj 中定义；已忽略第二个定义
-entity.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::algorithm::operator*(float const &,struct objl::Vector3 const &)" (??Dalgorithm@objl@@YA?AUVector3@1@AEBMAEBU21@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: void __cdecl Texture::Activate(unsigned int)" (?Activate@Texture@@QEAAXI@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-entity.obj : warning LNK4006: "float __cdecl objl::math::AngleBetweenV3(struct objl::Vector3,struct objl::Vector3)" (?AngleBetweenV3@math@objl@@YAMUVector3@2@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-entity.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::math::CrossV3(struct objl::Vector3,struct objl::Vector3)" (?CrossV3@math@objl@@YA?AUVector3@2@U32@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "private: void __cdecl Physics::CutVelocity(void)" (?CutVelocity@Physics@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
-entity.obj : warning LNK4006: "float __cdecl objl::math::DotV3(struct objl::Vector3,struct objl::Vector3)" (?DotV3@math@objl@@YAMUVector3@2@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: void __cdecl Meshes::Draw(void)" (?Draw@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
-entity.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::algorithm::GenTriNormal(struct objl::Vector3,struct objl::Vector3,struct objl::Vector3)" (?GenTriNormal@algorithm@objl@@YA?AUVector3@2@U32@00@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::GiveVelocity(struct glm::vec<2,float,0>)" (?GiveVelocity@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@U23@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-entity.obj : warning LNK4006: "float __cdecl objl::math::MagnitudeV3(struct objl::Vector3)" (?MagnitudeV3@math@objl@@YAMUVector3@2@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-entity.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::math::ProjV3(struct objl::Vector3,struct objl::Vector3)" (?ProjV3@math@objl@@YA?AUVector3@2@U32@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-entity.obj : warning LNK4006: "bool __cdecl objl::algorithm::SameSide(struct objl::Vector3,struct objl::Vector3,struct objl::Vector3,struct objl::Vector3)" (?SameSide@algorithm@objl@@YA_NUVector3@2@000@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+entity.obj : warning LNK4006: "public: bool __cdecl Physics::IsStatic(void)" (?IsStatic@Physics@@QEAA_NXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetHorizontalV(float)" (?SetHorizontalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetVelocity(struct glm::vec<2,float,0>)" (?SetVelocity@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@U23@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetVerticalV(float)" (?SetVerticalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: void __cdecl Meshes::Terminate(void)" (?Terminate@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: void __cdecl Physics::UpdateVelocity(float)" (?UpdateVelocity@Physics@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-entity.obj : warning LNK4006: "bool __cdecl objl::algorithm::inTriangle(struct objl::Vector3,struct objl::Vector3,struct objl::Vector3,struct objl::Vector3)" (?inTriangle@algorithm@objl@@YA_NUVector3@2@000@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "private: void __cdecl Meshes::loadToGL(void)" (?loadToGL@Meshes@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "float __cdecl random(void)" (?random@@YAMXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,bool,bool,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N111@Z) 已在 arrow.obj 中定义；已忽略第二个定义
@@ -91,6 +77,182 @@ entity.obj : warning LNK4006: stbi_zlib_decode_malloc_guesssize 已在 arrow.obj
 entity.obj : warning LNK4006: stbi_zlib_decode_malloc_guesssize_headerflag 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: stbi_zlib_decode_noheader_buffer 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: stbi_zlib_decode_noheader_malloc 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: __cdecl Combat::Combat(class Entity * const,float)" (??0Combat@@QEAA@QEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: __cdecl Health::Health(class Entity * const,float)" (??0Health@@QEAA@QEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: __cdecl Material::Material(struct glm::vec<3,float,0>,struct glm::vec<3,float,0>,struct glm::vec<3,float,0>,float,float,float)" (??0Material@@QEAA@U?$vec@$02M$0A@@glm@@00MMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: __cdecl Material::Material(struct glm::vec<3,float,0>,float,float,struct glm::vec<3,float,0>)" (??0Material@@QEAA@U?$vec@$02M$0A@@glm@@MM0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: __cdecl Material::Material(void)" (??0Material@@QEAA@XZ) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: __cdecl Meshes::Meshes(class std::vector<struct glm::vec<3,float,0>,class std::allocator<struct glm::vec<3,float,0> > > const &,class Material const *,class std::vector<struct glm::vec<3,float,0>,class std::allocator<struct glm::vec<3,float,0> > > const &,class std::vector<struct glm::vec<2,float,0>,class std::allocator<struct glm::vec<2,float,0> > > const &)" (??0Meshes@@QEAA@AEBV?$vector@U?$vec@$02M$0A@@glm@@V?$allocator@U?$vec@$02M$0A@@glm@@@std@@@std@@PEBVMaterial@@0AEBV?$vector@U?$vec@$01M$0A@@glm@@V?$allocator@U?$vec@$01M$0A@@glm@@@std@@@2@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: __cdecl Physics::Physics(enum GRAVITYTYPE,enum COLLISIONGROUP,struct glm::vec<3,float,0>)" (??0Physics@@QEAA@W4GRAVITYTYPE@@W4COLLISIONGROUP@@U?$vec@$02M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: __cdecl Shader::Shader(char const *,char const *)" (??0Shader@@QEAA@PEBD0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: __cdecl Texture::Texture(char const *,enum TextureType,unsigned int)" (??0Texture@@QEAA@PEBDW4TextureType@@I@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: __cdecl Meshes::~Meshes(void)" (??1Meshes@@QEAA@XZ) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Texture::Activate(unsigned int)" (?Activate@Texture@@QEAAXI@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Combat::AddATKModifiers(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,float,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?AddATKModifiers@Combat@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: float __cdecl Combat::CalcDamage(class Entity *,float)" (?CalcDamage@Combat@@QEAAMPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "private: void __cdecl Physics::CutVelocity(void)" (?CutVelocity@Physics@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Combat::DoAttack(class Entity *,float)" (?DoAttack@Combat@@QEAAXPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: float __cdecl Health::DoDelta(float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?DoDelta@Health@@QEAAMMV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Meshes::Draw(void)" (?Draw@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Combat::GetAttacked(class Entity *,float)" (?GetAttacked@Combat@@QEAAXPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::GiveVelocity(struct glm::vec<2,float,0>)" (?GiveVelocity@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@U23@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: bool __cdecl Physics::IsStatic(void)" (?IsStatic@Physics@@QEAA_NXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Combat::RemoveATKModifiers(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?RemoveATKModifiers@Combat@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Combat::SetBaseATK(float)" (?SetBaseATK@Combat@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Health::SetCurrentHealth(float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?SetCurrentHealth@Health@@QEAAXMV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetHorizontalV(float)" (?SetHorizontalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Health::SetInvincible(bool)" (?SetInvincible@Health@@QEAAX_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Health::SetMaxHealth(float,bool)" (?SetMaxHealth@Health@@QEAAXM_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetVelocity(struct glm::vec<2,float,0>)" (?SetVelocity@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@U23@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetVerticalV(float)" (?SetVerticalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Meshes::Terminate(void)" (?Terminate@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Physics::UpdateVelocity(float)" (?UpdateVelocity@Physics@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "private: void __cdecl Meshes::loadToGL(void)" (?loadToGL@Meshes@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "float __cdecl random(void)" (?random@@YAMXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,bool,bool,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N111@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,bool,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N11@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setFloat(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)const " (?setFloat@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setFloat(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,float)const " (?setFloat@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setFloat(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,float,float)const " (?setFloat@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setFloat(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,float,float,float)const " (?setFloat@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MMMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "void __cdecl stbi__unpremultiply_on_load_thread(int)" (?stbi__unpremultiply_on_load_thread@@YAXH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::use(void)" (?use@Shader@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb_thread 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_failure_reason 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_hdr_to_ldr_gamma 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_hdr_to_ldr_scale 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_image_free 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_info 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_info_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_info_from_file 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_info_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_is_16_bit 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_is_16_bit_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_is_16_bit_from_file 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_is_16_bit_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_is_hdr 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_is_hdr_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_is_hdr_from_file 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_is_hdr_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_ldr_to_hdr_gamma 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_ldr_to_hdr_scale 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_load 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_load_16 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_load_16_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_load_16_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_load_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_load_from_file 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_load_from_file_16 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_load_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_load_gif_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_loadf 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_loadf_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_loadf_from_file 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_loadf_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_set_flip_vertically_on_load 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_set_flip_vertically_on_load_thread 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_set_unpremultiply_on_load 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_zlib_decode_buffer 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_zlib_decode_malloc 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_zlib_decode_malloc_guesssize 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_zlib_decode_malloc_guesssize_headerflag 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_zlib_decode_noheader_buffer 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: stbi_zlib_decode_noheader_malloc 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: __cdecl Combat::Combat(class Entity * const,float)" (??0Combat@@QEAA@QEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: __cdecl Health::Health(class Entity * const,float)" (??0Health@@QEAA@QEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: __cdecl Material::Material(struct glm::vec<3,float,0>,struct glm::vec<3,float,0>,struct glm::vec<3,float,0>,float,float,float)" (??0Material@@QEAA@U?$vec@$02M$0A@@glm@@00MMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: __cdecl Material::Material(struct glm::vec<3,float,0>,float,float,struct glm::vec<3,float,0>)" (??0Material@@QEAA@U?$vec@$02M$0A@@glm@@MM0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: __cdecl Material::Material(void)" (??0Material@@QEAA@XZ) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: __cdecl Meshes::Meshes(class std::vector<struct glm::vec<3,float,0>,class std::allocator<struct glm::vec<3,float,0> > > const &,class Material const *,class std::vector<struct glm::vec<3,float,0>,class std::allocator<struct glm::vec<3,float,0> > > const &,class std::vector<struct glm::vec<2,float,0>,class std::allocator<struct glm::vec<2,float,0> > > const &)" (??0Meshes@@QEAA@AEBV?$vector@U?$vec@$02M$0A@@glm@@V?$allocator@U?$vec@$02M$0A@@glm@@@std@@@std@@PEBVMaterial@@0AEBV?$vector@U?$vec@$01M$0A@@glm@@V?$allocator@U?$vec@$01M$0A@@glm@@@std@@@2@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: __cdecl Physics::Physics(enum GRAVITYTYPE,enum COLLISIONGROUP,struct glm::vec<3,float,0>)" (??0Physics@@QEAA@W4GRAVITYTYPE@@W4COLLISIONGROUP@@U?$vec@$02M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: __cdecl Shader::Shader(char const *,char const *)" (??0Shader@@QEAA@PEBD0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: __cdecl Texture::Texture(char const *,enum TextureType,unsigned int)" (??0Texture@@QEAA@PEBDW4TextureType@@I@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: __cdecl Meshes::~Meshes(void)" (??1Meshes@@QEAA@XZ) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Texture::Activate(unsigned int)" (?Activate@Texture@@QEAAXI@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Combat::AddATKModifiers(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,float,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?AddATKModifiers@Combat@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: float __cdecl Combat::CalcDamage(class Entity *,float)" (?CalcDamage@Combat@@QEAAMPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "private: void __cdecl Physics::CutVelocity(void)" (?CutVelocity@Physics@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Combat::DoAttack(class Entity *,float)" (?DoAttack@Combat@@QEAAXPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: float __cdecl Health::DoDelta(float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?DoDelta@Health@@QEAAMMV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Meshes::Draw(void)" (?Draw@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Combat::GetAttacked(class Entity *,float)" (?GetAttacked@Combat@@QEAAXPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::GiveVelocity(struct glm::vec<2,float,0>)" (?GiveVelocity@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@U23@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: bool __cdecl Physics::IsStatic(void)" (?IsStatic@Physics@@QEAA_NXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Combat::RemoveATKModifiers(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?RemoveATKModifiers@Combat@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Combat::SetBaseATK(float)" (?SetBaseATK@Combat@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Health::SetCurrentHealth(float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?SetCurrentHealth@Health@@QEAAXMV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetHorizontalV(float)" (?SetHorizontalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Health::SetInvincible(bool)" (?SetInvincible@Health@@QEAAX_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Health::SetMaxHealth(float,bool)" (?SetMaxHealth@Health@@QEAAXM_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetVelocity(struct glm::vec<2,float,0>)" (?SetVelocity@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@U23@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetVerticalV(float)" (?SetVerticalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Meshes::Terminate(void)" (?Terminate@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Physics::UpdateVelocity(float)" (?UpdateVelocity@Physics@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "private: void __cdecl Meshes::loadToGL(void)" (?loadToGL@Meshes@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "float __cdecl random(void)" (?random@@YAMXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,bool,bool,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N111@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,bool,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N11@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::setFloat(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)const " (?setFloat@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::setFloat(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,float)const " (?setFloat@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::setFloat(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,float,float)const " (?setFloat@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::setFloat(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,float,float,float)const " (?setFloat@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MMMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "void __cdecl stbi__unpremultiply_on_load_thread(int)" (?stbi__unpremultiply_on_load_thread@@YAXH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::use(void)" (?use@Shader@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb_thread 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_failure_reason 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_hdr_to_ldr_gamma 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_hdr_to_ldr_scale 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_image_free 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_info 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_info_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_info_from_file 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_info_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_is_16_bit 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_is_16_bit_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_is_16_bit_from_file 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_is_16_bit_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_is_hdr 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_is_hdr_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_is_hdr_from_file 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_is_hdr_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_ldr_to_hdr_gamma 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_ldr_to_hdr_scale 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_load 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_load_16 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_load_16_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_load_16_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_load_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_load_from_file 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_load_from_file_16 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_load_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_load_gif_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_loadf 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_loadf_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_loadf_from_file 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_loadf_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_set_flip_vertically_on_load 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_set_flip_vertically_on_load_thread 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_set_unpremultiply_on_load 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_zlib_decode_buffer 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_zlib_decode_malloc 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_zlib_decode_malloc_guesssize 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_zlib_decode_malloc_guesssize_headerflag 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_zlib_decode_noheader_buffer 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: stbi_zlib_decode_noheader_malloc 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: __cdecl Combat::Combat(class Entity * const,float)" (??0Combat@@QEAA@QEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: __cdecl Health::Health(class Entity * const,float)" (??0Health@@QEAA@QEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: __cdecl Material::Material(struct glm::vec<3,float,0>,struct glm::vec<3,float,0>,struct glm::vec<3,float,0>,float,float,float)" (??0Material@@QEAA@U?$vec@$02M$0A@@glm@@00MMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
@@ -101,26 +263,19 @@ main.obj : warning LNK4006: "public: __cdecl Physics::Physics(enum GRAVITYTYPE,e
 main.obj : warning LNK4006: "public: __cdecl Shader::Shader(char const *,char const *)" (??0Shader@@QEAA@PEBD0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: __cdecl Texture::Texture(char const *,enum TextureType,unsigned int)" (??0Texture@@QEAA@PEBDW4TextureType@@I@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: __cdecl Meshes::~Meshes(void)" (??1Meshes@@QEAA@XZ) 已在 arrow.obj 中定义；已忽略第二个定义
-main.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::algorithm::operator*(float const &,struct objl::Vector3 const &)" (??Dalgorithm@objl@@YA?AUVector3@1@AEBMAEBU21@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: void __cdecl Texture::Activate(unsigned int)" (?Activate@Texture@@QEAAXI@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: void __cdecl Combat::AddATKModifiers(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,float,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?AddATKModifiers@Combat@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-main.obj : warning LNK4006: "float __cdecl objl::math::AngleBetweenV3(struct objl::Vector3,struct objl::Vector3)" (?AngleBetweenV3@math@objl@@YAMUVector3@2@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: float __cdecl Combat::CalcDamage(class Entity *,float)" (?CalcDamage@Combat@@QEAAMPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-main.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::math::CrossV3(struct objl::Vector3,struct objl::Vector3)" (?CrossV3@math@objl@@YA?AUVector3@2@U32@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "private: void __cdecl Physics::CutVelocity(void)" (?CutVelocity@Physics@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: void __cdecl Combat::DoAttack(class Entity *,float)" (?DoAttack@Combat@@QEAAXPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-main.obj : warning LNK4006: "public: float __cdecl Health::DoDelta(float)" (?DoDelta@Health@@QEAAMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-main.obj : warning LNK4006: "float __cdecl objl::math::DotV3(struct objl::Vector3,struct objl::Vector3)" (?DotV3@math@objl@@YAMUVector3@2@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+main.obj : warning LNK4006: "public: float __cdecl Health::DoDelta(float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?DoDelta@Health@@QEAAMMV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: void __cdecl Meshes::Draw(void)" (?Draw@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
-main.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::algorithm::GenTriNormal(struct objl::Vector3,struct objl::Vector3,struct objl::Vector3)" (?GenTriNormal@algorithm@objl@@YA?AUVector3@2@U32@00@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: void __cdecl Combat::GetAttacked(class Entity *,float)" (?GetAttacked@Combat@@QEAAXPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::GiveVelocity(struct glm::vec<2,float,0>)" (?GiveVelocity@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@U23@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-main.obj : warning LNK4006: "float __cdecl objl::math::MagnitudeV3(struct objl::Vector3)" (?MagnitudeV3@math@objl@@YAMUVector3@2@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-main.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::math::ProjV3(struct objl::Vector3,struct objl::Vector3)" (?ProjV3@math@objl@@YA?AUVector3@2@U32@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+main.obj : warning LNK4006: "public: bool __cdecl Physics::IsStatic(void)" (?IsStatic@Physics@@QEAA_NXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: void __cdecl Combat::RemoveATKModifiers(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?RemoveATKModifiers@Combat@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-main.obj : warning LNK4006: "bool __cdecl objl::algorithm::SameSide(struct objl::Vector3,struct objl::Vector3,struct objl::Vector3,struct objl::Vector3)" (?SameSide@algorithm@objl@@YA_NUVector3@2@000@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: void __cdecl Combat::SetBaseATK(float)" (?SetBaseATK@Combat@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-main.obj : warning LNK4006: "public: void __cdecl Health::SetCurrentHealth(float)" (?SetCurrentHealth@Health@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+main.obj : warning LNK4006: "public: void __cdecl Health::SetCurrentHealth(float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?SetCurrentHealth@Health@@QEAAXMV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetHorizontalV(float)" (?SetHorizontalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: void __cdecl Health::SetInvincible(bool)" (?SetInvincible@Health@@QEAAX_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: void __cdecl Health::SetMaxHealth(float,bool)" (?SetMaxHealth@Health@@QEAAXM_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
@@ -128,7 +283,6 @@ main.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics:
 main.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetVerticalV(float)" (?SetVerticalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: void __cdecl Meshes::Terminate(void)" (?Terminate@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: void __cdecl Physics::UpdateVelocity(float)" (?UpdateVelocity@Physics@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-main.obj : warning LNK4006: "bool __cdecl objl::algorithm::inTriangle(struct objl::Vector3,struct objl::Vector3,struct objl::Vector3,struct objl::Vector3)" (?inTriangle@algorithm@objl@@YA_NUVector3@2@000@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "private: void __cdecl Meshes::loadToGL(void)" (?loadToGL@Meshes@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "float __cdecl random(void)" (?random@@YAMXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,bool,bool,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N111@Z) 已在 arrow.obj 中定义；已忽略第二个定义
@@ -197,26 +351,19 @@ monster.obj : warning LNK4006: "public: __cdecl Physics::Physics(enum GRAVITYTYP
 monster.obj : warning LNK4006: "public: __cdecl Shader::Shader(char const *,char const *)" (??0Shader@@QEAA@PEBD0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: __cdecl Texture::Texture(char const *,enum TextureType,unsigned int)" (??0Texture@@QEAA@PEBDW4TextureType@@I@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: __cdecl Meshes::~Meshes(void)" (??1Meshes@@QEAA@XZ) 已在 arrow.obj 中定义；已忽略第二个定义
-monster.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::algorithm::operator*(float const &,struct objl::Vector3 const &)" (??Dalgorithm@objl@@YA?AUVector3@1@AEBMAEBU21@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: void __cdecl Texture::Activate(unsigned int)" (?Activate@Texture@@QEAAXI@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: void __cdecl Combat::AddATKModifiers(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,float,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?AddATKModifiers@Combat@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-monster.obj : warning LNK4006: "float __cdecl objl::math::AngleBetweenV3(struct objl::Vector3,struct objl::Vector3)" (?AngleBetweenV3@math@objl@@YAMUVector3@2@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: float __cdecl Combat::CalcDamage(class Entity *,float)" (?CalcDamage@Combat@@QEAAMPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-monster.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::math::CrossV3(struct objl::Vector3,struct objl::Vector3)" (?CrossV3@math@objl@@YA?AUVector3@2@U32@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "private: void __cdecl Physics::CutVelocity(void)" (?CutVelocity@Physics@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: void __cdecl Combat::DoAttack(class Entity *,float)" (?DoAttack@Combat@@QEAAXPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-monster.obj : warning LNK4006: "public: float __cdecl Health::DoDelta(float)" (?DoDelta@Health@@QEAAMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-monster.obj : warning LNK4006: "float __cdecl objl::math::DotV3(struct objl::Vector3,struct objl::Vector3)" (?DotV3@math@objl@@YAMUVector3@2@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+monster.obj : warning LNK4006: "public: float __cdecl Health::DoDelta(float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?DoDelta@Health@@QEAAMMV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: void __cdecl Meshes::Draw(void)" (?Draw@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
-monster.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::algorithm::GenTriNormal(struct objl::Vector3,struct objl::Vector3,struct objl::Vector3)" (?GenTriNormal@algorithm@objl@@YA?AUVector3@2@U32@00@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: void __cdecl Combat::GetAttacked(class Entity *,float)" (?GetAttacked@Combat@@QEAAXPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::GiveVelocity(struct glm::vec<2,float,0>)" (?GiveVelocity@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@U23@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-monster.obj : warning LNK4006: "float __cdecl objl::math::MagnitudeV3(struct objl::Vector3)" (?MagnitudeV3@math@objl@@YAMUVector3@2@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-monster.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::math::ProjV3(struct objl::Vector3,struct objl::Vector3)" (?ProjV3@math@objl@@YA?AUVector3@2@U32@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+monster.obj : warning LNK4006: "public: bool __cdecl Physics::IsStatic(void)" (?IsStatic@Physics@@QEAA_NXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: void __cdecl Combat::RemoveATKModifiers(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?RemoveATKModifiers@Combat@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-monster.obj : warning LNK4006: "bool __cdecl objl::algorithm::SameSide(struct objl::Vector3,struct objl::Vector3,struct objl::Vector3,struct objl::Vector3)" (?SameSide@algorithm@objl@@YA_NUVector3@2@000@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: void __cdecl Combat::SetBaseATK(float)" (?SetBaseATK@Combat@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-monster.obj : warning LNK4006: "public: void __cdecl Health::SetCurrentHealth(float)" (?SetCurrentHealth@Health@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+monster.obj : warning LNK4006: "public: void __cdecl Health::SetCurrentHealth(float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?SetCurrentHealth@Health@@QEAAXMV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetHorizontalV(float)" (?SetHorizontalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: void __cdecl Health::SetInvincible(bool)" (?SetInvincible@Health@@QEAAX_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: void __cdecl Health::SetMaxHealth(float,bool)" (?SetMaxHealth@Health@@QEAAXM_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
@@ -224,7 +371,6 @@ monster.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physi
 monster.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetVerticalV(float)" (?SetVerticalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: void __cdecl Meshes::Terminate(void)" (?Terminate@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: void __cdecl Physics::UpdateVelocity(float)" (?UpdateVelocity@Physics@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-monster.obj : warning LNK4006: "bool __cdecl objl::algorithm::inTriangle(struct objl::Vector3,struct objl::Vector3,struct objl::Vector3,struct objl::Vector3)" (?inTriangle@algorithm@objl@@YA_NUVector3@2@000@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "private: void __cdecl Meshes::loadToGL(void)" (?loadToGL@Meshes@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "float __cdecl random(void)" (?random@@YAMXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,bool,bool,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N111@Z) 已在 arrow.obj 中定义；已忽略第二个定义
@@ -293,26 +439,19 @@ player.obj : warning LNK4006: "public: __cdecl Physics::Physics(enum GRAVITYTYPE
 player.obj : warning LNK4006: "public: __cdecl Shader::Shader(char const *,char const *)" (??0Shader@@QEAA@PEBD0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: __cdecl Texture::Texture(char const *,enum TextureType,unsigned int)" (??0Texture@@QEAA@PEBDW4TextureType@@I@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: __cdecl Meshes::~Meshes(void)" (??1Meshes@@QEAA@XZ) 已在 arrow.obj 中定义；已忽略第二个定义
-player.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::algorithm::operator*(float const &,struct objl::Vector3 const &)" (??Dalgorithm@objl@@YA?AUVector3@1@AEBMAEBU21@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: void __cdecl Texture::Activate(unsigned int)" (?Activate@Texture@@QEAAXI@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: void __cdecl Combat::AddATKModifiers(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,float,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?AddATKModifiers@Combat@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-player.obj : warning LNK4006: "float __cdecl objl::math::AngleBetweenV3(struct objl::Vector3,struct objl::Vector3)" (?AngleBetweenV3@math@objl@@YAMUVector3@2@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: float __cdecl Combat::CalcDamage(class Entity *,float)" (?CalcDamage@Combat@@QEAAMPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-player.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::math::CrossV3(struct objl::Vector3,struct objl::Vector3)" (?CrossV3@math@objl@@YA?AUVector3@2@U32@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "private: void __cdecl Physics::CutVelocity(void)" (?CutVelocity@Physics@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: void __cdecl Combat::DoAttack(class Entity *,float)" (?DoAttack@Combat@@QEAAXPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-player.obj : warning LNK4006: "public: float __cdecl Health::DoDelta(float)" (?DoDelta@Health@@QEAAMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-player.obj : warning LNK4006: "float __cdecl objl::math::DotV3(struct objl::Vector3,struct objl::Vector3)" (?DotV3@math@objl@@YAMUVector3@2@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+player.obj : warning LNK4006: "public: float __cdecl Health::DoDelta(float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?DoDelta@Health@@QEAAMMV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: void __cdecl Meshes::Draw(void)" (?Draw@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
-player.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::algorithm::GenTriNormal(struct objl::Vector3,struct objl::Vector3,struct objl::Vector3)" (?GenTriNormal@algorithm@objl@@YA?AUVector3@2@U32@00@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: void __cdecl Combat::GetAttacked(class Entity *,float)" (?GetAttacked@Combat@@QEAAXPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::GiveVelocity(struct glm::vec<2,float,0>)" (?GiveVelocity@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@U23@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-player.obj : warning LNK4006: "float __cdecl objl::math::MagnitudeV3(struct objl::Vector3)" (?MagnitudeV3@math@objl@@YAMUVector3@2@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-player.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::math::ProjV3(struct objl::Vector3,struct objl::Vector3)" (?ProjV3@math@objl@@YA?AUVector3@2@U32@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+player.obj : warning LNK4006: "public: bool __cdecl Physics::IsStatic(void)" (?IsStatic@Physics@@QEAA_NXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: void __cdecl Combat::RemoveATKModifiers(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?RemoveATKModifiers@Combat@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-player.obj : warning LNK4006: "bool __cdecl objl::algorithm::SameSide(struct objl::Vector3,struct objl::Vector3,struct objl::Vector3,struct objl::Vector3)" (?SameSide@algorithm@objl@@YA_NUVector3@2@000@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: void __cdecl Combat::SetBaseATK(float)" (?SetBaseATK@Combat@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-player.obj : warning LNK4006: "public: void __cdecl Health::SetCurrentHealth(float)" (?SetCurrentHealth@Health@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+player.obj : warning LNK4006: "public: void __cdecl Health::SetCurrentHealth(float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?SetCurrentHealth@Health@@QEAAXMV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetHorizontalV(float)" (?SetHorizontalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: void __cdecl Health::SetInvincible(bool)" (?SetInvincible@Health@@QEAAX_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: void __cdecl Health::SetMaxHealth(float,bool)" (?SetMaxHealth@Health@@QEAAXM_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
@@ -320,7 +459,6 @@ player.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physic
 player.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetVerticalV(float)" (?SetVerticalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: void __cdecl Meshes::Terminate(void)" (?Terminate@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: void __cdecl Physics::UpdateVelocity(float)" (?UpdateVelocity@Physics@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-player.obj : warning LNK4006: "bool __cdecl objl::algorithm::inTriangle(struct objl::Vector3,struct objl::Vector3,struct objl::Vector3,struct objl::Vector3)" (?inTriangle@algorithm@objl@@YA_NUVector3@2@000@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "private: void __cdecl Meshes::loadToGL(void)" (?loadToGL@Meshes@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "float __cdecl random(void)" (?random@@YAMXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,bool,bool,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N111@Z) 已在 arrow.obj 中定义；已忽略第二个定义
@@ -379,6 +517,94 @@ player.obj : warning LNK4006: stbi_zlib_decode_malloc_guesssize 已在 arrow.obj
 player.obj : warning LNK4006: stbi_zlib_decode_malloc_guesssize_headerflag 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: stbi_zlib_decode_noheader_buffer 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: stbi_zlib_decode_noheader_malloc 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: __cdecl Combat::Combat(class Entity * const,float)" (??0Combat@@QEAA@QEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: __cdecl Health::Health(class Entity * const,float)" (??0Health@@QEAA@QEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: __cdecl Material::Material(struct glm::vec<3,float,0>,struct glm::vec<3,float,0>,struct glm::vec<3,float,0>,float,float,float)" (??0Material@@QEAA@U?$vec@$02M$0A@@glm@@00MMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: __cdecl Material::Material(struct glm::vec<3,float,0>,float,float,struct glm::vec<3,float,0>)" (??0Material@@QEAA@U?$vec@$02M$0A@@glm@@MM0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: __cdecl Material::Material(void)" (??0Material@@QEAA@XZ) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: __cdecl Meshes::Meshes(class std::vector<struct glm::vec<3,float,0>,class std::allocator<struct glm::vec<3,float,0> > > const &,class Material const *,class std::vector<struct glm::vec<3,float,0>,class std::allocator<struct glm::vec<3,float,0> > > const &,class std::vector<struct glm::vec<2,float,0>,class std::allocator<struct glm::vec<2,float,0> > > const &)" (??0Meshes@@QEAA@AEBV?$vector@U?$vec@$02M$0A@@glm@@V?$allocator@U?$vec@$02M$0A@@glm@@@std@@@std@@PEBVMaterial@@0AEBV?$vector@U?$vec@$01M$0A@@glm@@V?$allocator@U?$vec@$01M$0A@@glm@@@std@@@2@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: __cdecl Physics::Physics(enum GRAVITYTYPE,enum COLLISIONGROUP,struct glm::vec<3,float,0>)" (??0Physics@@QEAA@W4GRAVITYTYPE@@W4COLLISIONGROUP@@U?$vec@$02M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: __cdecl Shader::Shader(char const *,char const *)" (??0Shader@@QEAA@PEBD0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: __cdecl Texture::Texture(char const *,enum TextureType,unsigned int)" (??0Texture@@QEAA@PEBDW4TextureType@@I@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: __cdecl Meshes::~Meshes(void)" (??1Meshes@@QEAA@XZ) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Texture::Activate(unsigned int)" (?Activate@Texture@@QEAAXI@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Combat::AddATKModifiers(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,float,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?AddATKModifiers@Combat@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: float __cdecl Combat::CalcDamage(class Entity *,float)" (?CalcDamage@Combat@@QEAAMPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "private: void __cdecl Physics::CutVelocity(void)" (?CutVelocity@Physics@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Combat::DoAttack(class Entity *,float)" (?DoAttack@Combat@@QEAAXPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: float __cdecl Health::DoDelta(float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?DoDelta@Health@@QEAAMMV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Meshes::Draw(void)" (?Draw@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Combat::GetAttacked(class Entity *,float)" (?GetAttacked@Combat@@QEAAXPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::GiveVelocity(struct glm::vec<2,float,0>)" (?GiveVelocity@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@U23@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: bool __cdecl Physics::IsStatic(void)" (?IsStatic@Physics@@QEAA_NXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Combat::RemoveATKModifiers(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?RemoveATKModifiers@Combat@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Combat::SetBaseATK(float)" (?SetBaseATK@Combat@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Health::SetCurrentHealth(float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?SetCurrentHealth@Health@@QEAAXMV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetHorizontalV(float)" (?SetHorizontalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Health::SetInvincible(bool)" (?SetInvincible@Health@@QEAAX_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Health::SetMaxHealth(float,bool)" (?SetMaxHealth@Health@@QEAAXM_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetVelocity(struct glm::vec<2,float,0>)" (?SetVelocity@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@U23@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetVerticalV(float)" (?SetVerticalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Meshes::Terminate(void)" (?Terminate@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Physics::UpdateVelocity(float)" (?UpdateVelocity@Physics@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "private: void __cdecl Meshes::loadToGL(void)" (?loadToGL@Meshes@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "float __cdecl random(void)" (?random@@YAMXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,bool,bool,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N111@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,bool,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N11@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setFloat(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)const " (?setFloat@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setFloat(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,float)const " (?setFloat@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setFloat(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,float,float)const " (?setFloat@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setFloat(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,float,float,float)const " (?setFloat@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MMMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "void __cdecl stbi__unpremultiply_on_load_thread(int)" (?stbi__unpremultiply_on_load_thread@@YAXH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::use(void)" (?use@Shader@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb_thread 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_failure_reason 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_hdr_to_ldr_gamma 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_hdr_to_ldr_scale 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_image_free 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_info 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_info_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_info_from_file 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_info_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_is_16_bit 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_is_16_bit_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_is_16_bit_from_file 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_is_16_bit_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_is_hdr 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_is_hdr_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_is_hdr_from_file 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_is_hdr_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_ldr_to_hdr_gamma 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_ldr_to_hdr_scale 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_load 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_load_16 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_load_16_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_load_16_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_load_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_load_from_file 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_load_from_file_16 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_load_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_load_gif_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_loadf 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_loadf_from_callbacks 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_loadf_from_file 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_loadf_from_memory 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_set_flip_vertically_on_load 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_set_flip_vertically_on_load_thread 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_set_unpremultiply_on_load 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_zlib_decode_buffer 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_zlib_decode_malloc 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_zlib_decode_malloc_guesssize 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_zlib_decode_malloc_guesssize_headerflag 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_zlib_decode_noheader_buffer 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: stbi_zlib_decode_noheader_malloc 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: __cdecl Combat::Combat(class Entity * const,float)" (??0Combat@@QEAA@QEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: __cdecl Health::Health(class Entity * const,float)" (??0Health@@QEAA@QEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: __cdecl Material::Material(struct glm::vec<3,float,0>,struct glm::vec<3,float,0>,struct glm::vec<3,float,0>,float,float,float)" (??0Material@@QEAA@U?$vec@$02M$0A@@glm@@00MMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
@@ -389,26 +615,19 @@ world.obj : warning LNK4006: "public: __cdecl Physics::Physics(enum GRAVITYTYPE,
 world.obj : warning LNK4006: "public: __cdecl Shader::Shader(char const *,char const *)" (??0Shader@@QEAA@PEBD0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: __cdecl Texture::Texture(char const *,enum TextureType,unsigned int)" (??0Texture@@QEAA@PEBDW4TextureType@@I@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: __cdecl Meshes::~Meshes(void)" (??1Meshes@@QEAA@XZ) 已在 arrow.obj 中定义；已忽略第二个定义
-world.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::algorithm::operator*(float const &,struct objl::Vector3 const &)" (??Dalgorithm@objl@@YA?AUVector3@1@AEBMAEBU21@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Texture::Activate(unsigned int)" (?Activate@Texture@@QEAAXI@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Combat::AddATKModifiers(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,float,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?AddATKModifiers@Combat@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-world.obj : warning LNK4006: "float __cdecl objl::math::AngleBetweenV3(struct objl::Vector3,struct objl::Vector3)" (?AngleBetweenV3@math@objl@@YAMUVector3@2@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: float __cdecl Combat::CalcDamage(class Entity *,float)" (?CalcDamage@Combat@@QEAAMPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-world.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::math::CrossV3(struct objl::Vector3,struct objl::Vector3)" (?CrossV3@math@objl@@YA?AUVector3@2@U32@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "private: void __cdecl Physics::CutVelocity(void)" (?CutVelocity@Physics@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Combat::DoAttack(class Entity *,float)" (?DoAttack@Combat@@QEAAXPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-world.obj : warning LNK4006: "public: float __cdecl Health::DoDelta(float)" (?DoDelta@Health@@QEAAMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-world.obj : warning LNK4006: "float __cdecl objl::math::DotV3(struct objl::Vector3,struct objl::Vector3)" (?DotV3@math@objl@@YAMUVector3@2@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+world.obj : warning LNK4006: "public: float __cdecl Health::DoDelta(float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?DoDelta@Health@@QEAAMMV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Meshes::Draw(void)" (?Draw@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
-world.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::algorithm::GenTriNormal(struct objl::Vector3,struct objl::Vector3,struct objl::Vector3)" (?GenTriNormal@algorithm@objl@@YA?AUVector3@2@U32@00@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Combat::GetAttacked(class Entity *,float)" (?GetAttacked@Combat@@QEAAXPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::GiveVelocity(struct glm::vec<2,float,0>)" (?GiveVelocity@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@U23@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-world.obj : warning LNK4006: "float __cdecl objl::math::MagnitudeV3(struct objl::Vector3)" (?MagnitudeV3@math@objl@@YAMUVector3@2@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-world.obj : warning LNK4006: "struct objl::Vector3 __cdecl objl::math::ProjV3(struct objl::Vector3,struct objl::Vector3)" (?ProjV3@math@objl@@YA?AUVector3@2@U32@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+world.obj : warning LNK4006: "public: bool __cdecl Physics::IsStatic(void)" (?IsStatic@Physics@@QEAA_NXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Combat::RemoveATKModifiers(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?RemoveATKModifiers@Combat@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-world.obj : warning LNK4006: "bool __cdecl objl::algorithm::SameSide(struct objl::Vector3,struct objl::Vector3,struct objl::Vector3,struct objl::Vector3)" (?SameSide@algorithm@objl@@YA_NUVector3@2@000@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Combat::SetBaseATK(float)" (?SetBaseATK@Combat@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-world.obj : warning LNK4006: "public: void __cdecl Health::SetCurrentHealth(float)" (?SetCurrentHealth@Health@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+world.obj : warning LNK4006: "public: void __cdecl Health::SetCurrentHealth(float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?SetCurrentHealth@Health@@QEAAXMV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetHorizontalV(float)" (?SetHorizontalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Health::SetInvincible(bool)" (?SetInvincible@Health@@QEAAX_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Health::SetMaxHealth(float,bool)" (?SetMaxHealth@Health@@QEAAXM_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
@@ -416,7 +635,6 @@ world.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics
 world.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetVerticalV(float)" (?SetVerticalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Meshes::Terminate(void)" (?Terminate@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Physics::UpdateVelocity(float)" (?UpdateVelocity@Physics@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
-world.obj : warning LNK4006: "bool __cdecl objl::algorithm::inTriangle(struct objl::Vector3,struct objl::Vector3,struct objl::Vector3,struct objl::Vector3)" (?inTriangle@algorithm@objl@@YA_NUVector3@2@000@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "private: void __cdecl Meshes::loadToGL(void)" (?loadToGL@Meshes@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "float __cdecl random(void)" (?random@@YAMXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Shader::setBool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,bool,bool,bool)const " (?setBool@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N111@Z) 已在 arrow.obj 中定义；已忽略第二个定义
