@@ -83,6 +83,8 @@ protected:
 public:
     virtual ~Object() {};
 
+    /************************************************************/
+    //tags
     bool HasTag(const std::string& tag) const
     {
         for (auto s : tags)
@@ -111,6 +113,8 @@ public:
         }
     }
 
+    /************************************************************/
+    //eventlisteners
     void ListenForEvent(const std::string& eventname, unsigned int id, const std::string& key = "")
     {
         for (auto l : listeners)
@@ -135,6 +139,14 @@ public:
         }
     }
 
+    void RemoveAllListeners()
+    {
+        for (auto iter = listeners.begin(); iter != listeners.end(); )
+        {
+            iter = listeners.erase(iter);
+        }
+    }
+
     void PushEvent(const std::string& eventname, DATA data = DATA{})
     {
         for (auto l : listeners)
@@ -144,6 +156,8 @@ public:
         }
     }
 
+    /************************************************************/
+    //timetaskers
     void DoTaskInTime(float time, unsigned int id, const std::string& key = "")
     {
         for (auto t : ttaskers)
@@ -165,6 +179,16 @@ public:
         }
     }
 
+    void RemoveAllTimeTask()
+    {
+        for (auto iter = ttaskers.begin(); iter != ttaskers.end(); )
+        {
+            iter = ttaskers.erase(iter);
+        }
+    }
+
+    /************************************************************/
+    //periodictaskers
     void DoPeriodicTask(float period, unsigned int id, float max_time = INFINITY, const std::string& key = "")
     {
         for (auto p : ptaskers)
@@ -186,6 +210,16 @@ public:
         }
     }
 
+    void RemoveAllPeriodicTask()
+    {
+        for (auto iter = ptaskers.begin(); iter != ptaskers.end(); )
+        {
+            iter = ptaskers.erase(iter);
+        }
+    }
+
+    /************************************************************/
+    //
     void TimeTick(float deltaT)
     {
         for (auto iter = ttaskers.begin(); iter != ttaskers.end(); )

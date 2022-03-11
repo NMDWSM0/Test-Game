@@ -57,7 +57,7 @@ void FlyEar::OnCollide(DATA data)
 	auto dir = dirs.begin();
 	for (; col != colliders.end() && dir != dirs.end(); ++col, ++dir)
 	{
-		if ((*col) && (*col)->HasTag("blockers") && (*dir) == COLLIDEDIRECTION::HORIZONTAL)
+		if ((*col) && !(*col)->HasTag("player") && (*dir) == COLLIDEDIRECTION::HORIZONTAL)
 		{
 			shouldturn = true;
 		}

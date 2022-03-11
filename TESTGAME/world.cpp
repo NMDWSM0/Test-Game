@@ -5,7 +5,18 @@
 extern Player* ThePlayer;
 extern World* TheWorld;
 
+World::World():
+	hasloaded(false)
+{
+
+}
+
 World::World(const std::string& levelname)
+{
+	LoadWorld(levelname);
+}
+
+void World::LoadWorld(const std::string& levelname)
 {
 	std::ifstream file(levelname);
 	if (!file.is_open())
@@ -23,7 +34,7 @@ World::World(const std::string& levelname)
 			std::string size = curline.substr(2);
 			sscanf(size.c_str(), "%f/%f/%f/%f", &x1, &y1, &x2, &y2);
 
-			assert(x1 < x2 && y1 < y2);
+			assert(x1 < x2&& y1 < y2);
 
 			SetWorldSize(x1, y1, x2, y2);
 			hassize = true;
@@ -50,7 +61,19 @@ World::World(const std::string& levelname)
 		}
 	}
 	assert(hassize);
+	hasloaded = true;
 }
+
+void World::QuitWorld()
+{
+	Clear();
+	hasloaded = false;
+}
+
+
+/**********************************************************************/
+
+
 
 // x_min, y_min, x_max, y_max
 void World::SetWorldSize(float x1, float y1, float x2, float y2)
@@ -98,6 +121,11 @@ Entity& World::SpawnEntity(unsigned int id)
 	case 101:
 		ent = new FlyEar();
 		break;
+	case 102:
+		ent = new JumpBlack();
+		break;
+	case 103:
+		ent = new ShieldBlack();
 	}
 
 	entities.push_back(ent);

@@ -6,22 +6,32 @@
 #include "player.h"
 #include "monster.h"
 
+typedef bool (*CanAttackFunc)(Entity*, Entity*, DATA);
+
 class Combat :public Component
 {
 	float atk;
 	SourceModifierList atk_modifiers;
 
+	CanAttackFunc canattackfunc;
+
+	CanAttackFunc canbeattackedfunc;
+
 	//float def;
 	//float res;
 	//float bonus;
 public:
-	Combat(Entity* const inst, float attack);
+	Combat(Entity* const inst, float attack); 
 
-	void DoAttack(Entity* target, float instancemult = 1.0f);
+	void SetCanAttack(CanAttackFunc func);
+
+	void SetCanBeAttacked(CanAttackFunc func);
+
+	bool DoAttack(Entity* target, float instancemult = 1.0f, DATA data = {});
 
 	float CalcDamage(Entity* target, float instancemult);
 
-	void GetAttacked(Entity* attacker, float dmg);
+	bool GetAttacked(Entity* attacker, float dmg);
 
 	void SetBaseATK(float v);
 
@@ -43,7 +53,7 @@ public:
 /********************************************************/
 
 Combat::Combat(Entity* const inst, float attack):
-	Component(inst), atk(attack)
+	Component(inst), atk(attack), canattackfunc(nullptr), canbeattackedfunc(nullptr)
 {
 	assert(inst != nullptr);
 	inst->AddTag("_combat");
@@ -64,16 +74,34 @@ void Combat::RemoveATKModifiers(std::string source, std::string key)
 	atk_modifiers.RemoveModifier(source, key);
 }
 
-void Combat::DoAttack(Entity* target, float instancemult)
+void Combat::SetCanAttack(CanAttackFunc func)
+{
+	canattackfunc = func;
+}
+
+void Combat::SetCanBeAttacked(CanAttackFunc func)
+{
+	canbeattackedfunc = func;
+}
+
+//data: bool isarrowattack, vec3 arrowpos
+bool Combat::DoAttack(Entity* target, float instancemult, DATA data)
 {
 	if (target->combat == nullptr)
-		return;
+		return false;
 	if (target->health == nullptr || target->health->IsDead())
-		return;
+		return false;
+	
+	// attacker, target, data
+	if (canattackfunc != nullptr && !(*canattackfunc)(inst, target, data))
+		return false;
+	// attacker, target, data
+	if (target->combat->canbeattackedfunc != nullptr && !(*target->combat->canbeattackedfunc)(inst, target, data))
+		return false;
 
 	float damage = CalcDamage(target, instancemult);
 
-	target->combat->GetAttacked(inst, damage);
+	return target->combat->GetAttacked(inst, damage);
 }
 
 float Combat::CalcDamage(Entity* target, float instancemult)
@@ -84,10 +112,10 @@ float Combat::CalcDamage(Entity* target, float instancemult)
 	return damage;
 }
 
-void Combat::GetAttacked(Entity* attacker, float dmg)
+bool Combat::GetAttacked(Entity* attacker, float dmg)
 {
 	if (inst->health == nullptr || inst->health->IsDead())
-		return;
+		return false;
 
 	bool blocked = false;
 	float damageresolved = 0.0f;
@@ -102,10 +130,12 @@ void Combat::GetAttacked(Entity* attacker, float dmg)
 	{
 		attacker->PushEvent("hitother", DATA{ inst, dmg, damageresolved });  //target, damage, damageresolved
 		inst->PushEvent("attacked", DATA{ attacker, dmg, damageresolved });  //attacker, damage, damageresolved
+		return true;
 	}
 	else
 	{
 		attacker->PushEvent("misstarget", DATA{ inst, dmg });
+		return false;
 	}
 }
 

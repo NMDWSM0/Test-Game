@@ -26,7 +26,8 @@ enum COLLISIONGROUP {
 	ENTITIES,//其它实体，诸如各种道具，BOSS发射的炸弹等等，这些实体更加遵循物理规律，
 			 //比如弹跳，摩擦；它们与WORLD和MOVABLE碰撞时会遵循一点点物理规律（但不会推动MOVABLE），与PLAYER碰撞会有特殊效果，和ENEMIES碰撞也有（取决于具体是什么）
     ENEMIES, //敌人（除了漂浮的BOSS），和NETITIES的碰撞属性基本一样，区别在于没有遵循什么物理规律
-	NOTHING  //完全不碰撞，这个没什么好说的，需要注意的是漂浮的BOSS也属于NONE组
+	THR_ENEMIES,//会跳的小黑，和普通怪物的区别是，与A_WORLD碰撞时遵循玩家的碰撞机制
+	NOTHING, //完全不碰撞，这个没什么好说的，需要注意的是漂浮的BOSS也属于NONE组
 };
 //以上碰撞组中，会与同组碰撞的只有WORLD和MOVABLE
 

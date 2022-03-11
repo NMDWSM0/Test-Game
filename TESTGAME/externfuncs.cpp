@@ -1,6 +1,9 @@
 #include "world.h"
 #include "entities.h"
 #include "externfuncs.h"
+#include "GAMEMODE.h"
+
+extern GAMEMODE gameon;
 
 extern Player* ThePlayer;
 extern World* TheWorld;
@@ -67,9 +70,24 @@ Entity& SpawnEntity(unsigned int id)
 std::vector<Entity*> FindEntities(float x, float y, float z, float radius, const std::vector<std::string>& MUSTtags, const std::vector<std::string>& MUSTNOTtags, const std::vector<std::string>& MUSTOFONEtags)
 {
 	std::vector<Entity*> objs;
+	glm::vec4 worldsize = TheWorld->GetWorldSize();  // x_min, y_min, x_max, y_max
+	float x_size = worldsize.z - worldsize.x;
+	float y_size = worldsize.w - worldsize.y;
 	for (auto e : TheWorld->GetEntities())
 	{
-		if (sqrtf(pow(e->position.x - x, 2) + pow(e->position.y - y, 2) + pow(e->position.z - z, 2)) >= radius)
+		bool isnear = false;
+		for (int i = -1; i <= 1; i++)
+		{
+			for (int j = -1; j <= 1; j++)
+			{
+				if (glm::length(e->position + glm::vec3(i * x_size, j * y_size, 0.0f) - glm::vec3(x, y, z)) < radius)
+				{
+					isnear = true;
+					break;
+				}
+			}
+		}
+		if (!isnear)
 			continue;
 
 		for (auto t : MUSTtags)
@@ -101,7 +119,19 @@ std::vector<Entity*> FindEntities(float x, float y, float z, float radius, const
 	back:;
 	}
 	//player
-	if (sqrtf(pow(ThePlayer->position.x - x, 2) + pow(ThePlayer->position.y - y, 2) + pow(ThePlayer->position.z - z, 2)) >= radius)
+	bool isnear = false;
+	for (int i = -1; i <= 1; i++)
+	{
+		for (int j = -1; j <= 1; j++)
+		{
+			if (glm::length(ThePlayer->position + glm::vec3(i * x_size, j * y_size, 0.0f) - glm::vec3(x, y, z)) < radius)
+			{
+				isnear = true;
+				break;
+			}
+		}
+	}
+	if (!isnear)
 		return objs;
 	for (auto t : MUSTtags)
 		if (!ThePlayer->HasTag(t))
@@ -123,11 +153,23 @@ Entity* FindCloestEntityWithTag(float x, float y, float z, std::string tag)
 {
 	std::vector<Entity*> ents = FindEntities(x, y, z, TheWorld->GetWorldExpansion(), std::vector<std::string>{tag});
 
+	glm::vec4 worldsize = TheWorld->GetWorldSize();  // x_min, y_min, x_max, y_max
+	float x_size = worldsize.z - worldsize.x;
+	float y_size = worldsize.w - worldsize.y;
+
 	Entity* cloest = nullptr;
 	float min_length = INFINITY;
 	for (auto e : ents)
 	{
 		float dist = glm::length(glm::vec3(x, y, z) - e->position);
+		for (int i = -1; i <= 1; i++)
+		{
+			for (int j = -1; j <= 1; j++)
+			{
+				dist = fminf(dist, glm::length(glm::vec3(x, y, z) + glm::vec3(i * x_size, j * y_size, 0.0f) - e->position));
+			}
+		}
+
 		if (dist < min_length)
 		{
 			cloest = e;
@@ -136,4 +178,9 @@ Entity* FindCloestEntityWithTag(float x, float y, float z, std::string tag)
 	}
 
 	return cloest;
+}
+
+void PlayerDeathQuit()
+{
+	gameon = OFF;
 }

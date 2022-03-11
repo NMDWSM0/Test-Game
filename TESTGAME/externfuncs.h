@@ -17,4 +17,6 @@ Entity& SpawnEntity(unsigned int id);
 std::vector<Entity*> FindEntities(float x, float y, float z, float radius, const std::vector<std::string>& MUSTtags, const std::vector<std::string>& MUSTNOTtags = std::vector<std::string>{}, const std::vector<std::string>& MUSTOFONEtags = std::vector<std::string>{});
 Entity* FindCloestEntityWithTag(float x, float y, float z, std::string tag);
 
+void PlayerDeathQuit();
+
 #endif // !EXTERNFUNCS_H

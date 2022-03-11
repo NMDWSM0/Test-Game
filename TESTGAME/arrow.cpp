@@ -88,6 +88,7 @@ void Arrow::OnCollide(DATA data)
 			physics->SetVerticalV(0.0f);
 			SetGravityType(GRAVITYTYPE::ANTIGRAVITY);
 			SetRotation(0.0f);
+			AddTag("blockers");
 			return;
 		}
 
@@ -102,8 +103,15 @@ void Arrow::OnCollide(DATA data)
 		if (collider->HasTag("monster"))
 		{
 			//
+			bool succeed;
 			if (attacker != nullptr && attacker->combat != nullptr)
-				attacker->combat->DoAttack(collider, 1.01f);
+			{
+				succeed = attacker->combat->DoAttack(collider, 1.01f, {true, position});
+			}
+			
+			//
+			printf("%d\n", succeed);
+
 			Remove();
 			return;
 		}

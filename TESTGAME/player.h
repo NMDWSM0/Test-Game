@@ -18,6 +18,8 @@ public:
 		ONATTACKED,
 		TWINT,
 		STOPINVINCIBLE,
+		
+		QUITGAME,
 	};
 
 private:
@@ -42,6 +44,10 @@ private:
 
 public:
 	Player(const std::string& filename, const std::string& texturename = "");
+
+	void PlayerDeath();
+
+	void OnBecameHuman();
 
 	void UpdateKeyCD(float deltaT) 
 	{

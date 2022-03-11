@@ -1,11 +1,19 @@
 #define _CRT_SECURE_NO_WARNINGS
+#include "imgui/imgui.h"
+#include "imgui/imgui_impl_glfw.h"
+#include "imgui/imgui_impl_opengl3.h"
 #include "shader.h"
 #include "followcamera.h"
 #include "input.h"
 #include "world.h"
 #include <GLFW/glfw3.h>
+#include "imgui/imgui_manager.h"
 #include <iostream>
 #include <windows.h>
+
+#if defined(_MSC_VER) && (_MSC_VER >= 1900) && !defined(IMGUI_DISABLE_WIN32_FUNCTIONS)
+#pragma comment(lib, "legacy_stdio_definitions")
+#endif
 
 //启动独显渲染
 extern "C" {
@@ -22,6 +30,15 @@ Input* TheInput;
 Player* ThePlayer;
 //世界
 World* TheWorld;
+
+GAMEMODE gameon = OFF;
+
+std::vector<std::string> worldfiles =
+{
+    "assets/worlds/testworld.txt",
+};
+
+unsigned int worldnumber = 1;
 
 int main()
 {
@@ -58,11 +75,17 @@ int main()
     TheInput = new Input(window, ThePlayer);
     //创建摄像机类
     TheCamera = new FollowCamera(ThePlayer);
-    //创建玩家
-    TheWorld = new World("assets/worlds/testworld.txt");
+    TheCamera->LockToZFront();
+    //创建世界
+    TheWorld = new World();
+
+    unsigned int currentworldlevel = 0;
 
     //加载着色器
     Shader mainshader("shaders/mainshader/main.vert", "shaders/mainshader/main.frag");
+
+    //初始化ImGui（使用自定义类）
+    ImGuiManager imgui(window);
 
     //开启深度测试
     glEnable(GL_DEPTH_TEST);
@@ -80,39 +103,72 @@ int main()
         currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
-        TheInput->ProcessInput(deltaTime);
-        TheWorld->UpdateEntities(deltaTime);
 
-        //更新相机位置
-        TheCamera->UpdateCameraPos(TheWorld->GetWorldSize());
-        glm::vec3 uCameraPos = TheCamera->Position;
-        //更新view矩阵
-        glm::mat4 view = TheCamera->GetViewMatrix();
-        //更新projection矩阵
-        glm::vec2 halfsize = TheCamera->GetHalfViewSize();
-        glm::mat4 projection = glm::ortho(-halfsize.x, halfsize.x, -halfsize.y, halfsize.y, 1.0f, 35.0f);
-
-        //渲染指令
-        //清除颜色缓冲
-        glClearColor(0.4f, 0.3f, 0.8f, 1.0f);  
+        glClearColor(0.1f, 0.3f, 0.4f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        mainshader.use();
-        mainshader.setMat("uView", view);
-        mainshader.setMat("uProjection", projection);
-        
-        TheWorld->Draw(mainshader);
+        //创建新ImGui帧
+        imgui.NewFrame();
+        TheInput->ProcessInput(deltaTime);
 
+        if (gameon == ON)
+        {
+            if (!TheWorld->HasLoaded())
+            {
+                TheWorld->LoadWorld(worldfiles[currentworldlevel]);
+                ThePlayer->OnBecameHuman();
+            }
+
+            //世界更新
+            TheWorld->UpdateEntities(deltaTime);
+
+            //更新相机位置
+            TheCamera->UpdateCameraPos(TheWorld->GetWorldSize());
+            glm::vec3 uCameraPos = TheCamera->Position;
+            //更新view矩阵
+            glm::mat4 view = TheCamera->GetViewMatrix();
+            //更新projection矩阵
+            glm::vec2 halfsize = TheCamera->GetHalfViewSize();
+            glm::mat4 projection = glm::ortho(-halfsize.x, halfsize.x, -halfsize.y, halfsize.y, 1.0f, 35.0f);
+
+            glClearColor(0.4f, 0.3f, 0.8f, 1.0f);
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+            mainshader.use();
+            mainshader.setMat("uView", view);
+            mainshader.setMat("uProjection", projection);
+
+            TheWorld->Draw(mainshader);
+        }
+        else if (gameon == PAUSE)
+        {
+            glClearColor(0.4f, 0.3f, 0.8f, 1.0f);
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+            TheWorld->Draw(mainshader);
+            //UI
+            ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+        }
+        else if (gameon == OFF)
+        {
+            if (TheWorld->HasLoaded())
+            {
+                TheWorld->QuitWorld();
+                ThePlayer->PlayerDeath();
+            }
+            //UI
+            ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+        }
+
+        //imgui.DrawFrame();
         //交换颜色缓冲（双缓冲）
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
     //施放缓冲区（其实会自动的吧）
-
+    imgui.Terminate();
     //退出
     glfwTerminate();
-    //system("pause");
     return 0;
 }
 

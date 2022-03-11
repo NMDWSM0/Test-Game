@@ -11,5 +11,7 @@
 //monsters
 #include "smalldot.h"
 #include "flyear.h"
+#include "jumpblack.h"
+#include "shieldblack.h"
 
 #endif // !ENTITIES_H

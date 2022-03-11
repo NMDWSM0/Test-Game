@@ -6,8 +6,10 @@
 #include <GLFW/glfw3.h>
 #include "followcamera.h"
 #include "player.h"
+#include "GAMEMODE.h"
 
 extern FollowCamera* TheCamera;
+extern GAMEMODE gameon;
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 {
@@ -57,8 +59,15 @@ Input::Input(GLFWwindow* w, Player* ThePlayer, GLuint cursormode):
 
 void Input::ProcessInput(float deltaT)
 {
+    if (gameon != ON)
+    {
+        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+        return;
+    }
+
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
+        //glfwSetWindowShouldClose(window, true);
+        gameon = PAUSE;
 
     if (defaultmode == GLFW_CURSOR_DISABLED)
     {

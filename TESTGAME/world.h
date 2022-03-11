@@ -9,12 +9,24 @@
 
 class World : public Object
 {
+	bool hasloaded;
+
 	float x_min, x_max, y_min, y_max;
 
 	std::vector<Entity*> entities;
 
 public:
+	World();
+
 	World(const std::string& levelname);
+
+	void LoadWorld(const std::string& levelname);
+
+	void QuitWorld();
+
+	bool HasLoaded() const { return hasloaded; }
+
+	/********************************************/
 
 	void SetWorldSize(float x1, float y1, float x2, float y2);
 

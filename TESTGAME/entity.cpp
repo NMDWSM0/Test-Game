@@ -171,7 +171,7 @@ bool Entity::CanCollide(const Entity& ent, COLLIDEDIRECTION dir) const
 			}
 			return false;
 		}
-		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::PLAYER)
+		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::PLAYER && ent.physics->collisiongroup != COLLISIONGROUP::INV_PLAYER)
 			return true;
 		return false;
 		break;
@@ -195,7 +195,7 @@ bool Entity::CanCollide(const Entity& ent, COLLIDEDIRECTION dir) const
 			}
 			return false;
 		}
-		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::PLAYER && ent.physics->collisiongroup != COLLISIONGROUP::ENEMIES)
+		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::PLAYER && ent.physics->collisiongroup != COLLISIONGROUP::ENEMIES && ent.physics->collisiongroup != COLLISIONGROUP::THR_ENEMIES && ent.physics->collisiongroup != COLLISIONGROUP::INV_PLAYER)
 			return true;
 		return false;
 		break;
@@ -209,7 +209,32 @@ bool Entity::CanCollide(const Entity& ent, COLLIDEDIRECTION dir) const
 
 	case COLLISIONGROUP::ENEMIES:
 
-		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::ENEMIES && ent.physics->collisiongroup != COLLISIONGROUP::INV_PLAYER)
+		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::ENEMIES && ent.physics->collisiongroup != COLLISIONGROUP::INV_PLAYER && ent.physics->collisiongroup != COLLISIONGROUP::THR_ENEMIES)
+			return true;
+		return false;
+		break;
+
+	case COLLISIONGROUP::THR_ENEMIES:
+
+		if (ent.physics->collisiongroup == COLLISIONGROUP::WORLD)
+		{
+			return true;
+		}
+		if (ent.physics->collisiongroup == COLLISIONGROUP::A_WORLD)
+		{
+			deltay = position.y - physics->boundingbox.y / 2.0f - (ent.position.y + ent.physics->boundingbox.y / 2.0f);
+			if (deltay > 0.0f)
+				//ÔÚÉÏÃæ
+				return true;
+			if (deltay > -0.03f * fabs(physics->velocity.y))
+			{
+				if (physics->GetVelocity().y >= 0.0f)
+					return false;
+				return true;
+			}
+			return false;
+		}
+		if (ent.physics->collisiongroup != COLLISIONGROUP::NOTHING && ent.physics->collisiongroup != COLLISIONGROUP::THR_ENEMIES && ent.physics->collisiongroup != COLLISIONGROUP::ENEMIES && ent.physics->collisiongroup != COLLISIONGROUP::INV_PLAYER)
 			return true;
 		return false;
 		break;
@@ -271,6 +296,8 @@ bool Entity::OnGround() const
 	std::vector<Entity*> nearobj = NearObject(*this);
 	for (auto e : nearobj)
 	{
+		if (!e->HasTag("blockers"))
+			continue;
 		float deltay = position.y - physics->boundingbox.y / 2.0f - (e->position.y + e->physics->boundingbox.y / 2.0f);
 		if (deltay > -0.1f && deltay < 0.01f)
 			return true;

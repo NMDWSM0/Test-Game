@@ -14,8 +14,40 @@ Player::Player(const std::string& filename, const std::string& texturename) :
 	combat = new Combat(this, 10.0f);
 
 	ListenForEvent("attacked", ONATTACKED);
+	ListenForEvent("death", QUITGAME);
 
 	AddTag("player");
+}
+
+void Player::PlayerDeath()
+{
+	RemoveAllListeners();
+	RemoveAllTimeTask();
+	RemoveAllPeriodicTask();
+
+}
+
+void Player::OnBecameHuman()
+{
+	position.z = 0.1f;
+	SetGravityType(GRAVITYTYPE::GRAVITATIONAL);
+	SetCollisionGroup(COLLISIONGROUP::PLAYER);
+	SetBounding(glm::vec3(1.1f, 1.3f, 0.0f));
+	physics->SetVelocity(glm::vec2(0.0f));
+
+	health->SetMaxHealth(30.0f);
+	health->SetCurrentHealth(30.0f);
+
+	ListenForEvent("attacked", ONATTACKED);
+	ListenForEvent("death", QUITGAME);
+
+	jump_level = 0;
+	right = true;
+	stunned = false;
+	stunned_color = glm::vec4(1.0f, 1.0f, 0.1f, 0.0f);
+	stunned_rot = 0.0f;
+	twint_on = true;
+	rotation = 0.0f;
 }
 
 /*****************************************************************/
@@ -76,6 +108,9 @@ void Player::EventTask(unsigned int id, DATA data)
 	{
 	case ONATTACKED:
 		OnAttacked(data);
+		break;
+	case QUITGAME:
+		PlayerDeathQuit();
 		break;
 	}
 }

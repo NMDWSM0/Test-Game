@@ -72,8 +72,6 @@ void Health::SetMaxHealth(float max, bool withpercent)
 // data: attacker(afflicter)
 void Health::SetCurrentHealth(float current, DATA data)
 {
-	if (IsDead())
-		return;
 	if (current > max_health)
 		current = max_health;
 	float ori_health = current_health;
