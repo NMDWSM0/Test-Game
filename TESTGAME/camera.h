@@ -107,6 +107,12 @@ public:
 
     //解锁摄像机
     virtual void Unlock();
+
+    //外部调用强制更新相机
+    void UpdateCamera()
+    {
+        updateCameraVectors();
+    }
 };
 
 //

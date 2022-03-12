@@ -100,7 +100,7 @@ bool Combat::DoAttack(Entity* target, float instancemult, DATA data)
 		return false;
 
 	float damage = CalcDamage(target, instancemult);
-
+	
 	return target->combat->GetAttacked(inst, damage);
 }
 

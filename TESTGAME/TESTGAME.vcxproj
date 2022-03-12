@@ -153,10 +153,12 @@
   <ItemGroup>
     <ClInclude Include="abilitycd.h" />
     <ClInclude Include="arrow.h" />
+    <ClInclude Include="background.h" />
     <ClInclude Include="brain.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="combat.h" />
     <ClInclude Include="component.h" />
+    <ClInclude Include="disaprblock.h" />
     <ClInclude Include="entities.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="externfuncs.h" />
@@ -191,6 +193,7 @@
     <ClInclude Include="smalldot.h" />
     <ClInclude Include="smalldotbrain.h" />
     <ClInclude Include="sourcemodifierlist.h" />
+    <ClInclude Include="spring.h" />
     <ClInclude Include="textures.h" />
     <ClInclude Include="world.h" />
   </ItemGroup>
@@ -216,6 +219,8 @@
     <ClCompile Include="world.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="shaders\bgshader\bg.frag" />
+    <None Include="shaders\bgshader\bg.vert" />
     <None Include="shaders\mainshader\main.frag" />
     <None Include="shaders\mainshader\main.vert" />
   </ItemGroup>

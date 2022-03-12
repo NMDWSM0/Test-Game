@@ -107,9 +107,6 @@ void Monster::UpdatePosition(float deltaT)
 	std::vector<COLLIDEDIRECTION> dir;
 	std::vector<Entity*> collideobj = CollidedObject(*this, dir);
 
-	/*for (auto c : collideobj)
-		if (c->HasTag("player"))*/
-
 	if (collideobj.size() > 0)
 	{
 		bool hasc_x = false, hasc_y = false;
@@ -173,6 +170,9 @@ void Monster::Update(float deltaT)
 
 	if (brain != nullptr)
 		brain->UpdateActions();
+
+	if (!health->IsDead())
+		SendEventToUnder({ "blockers", "disaprblock" }, "collidewitht");
 }
 
 /*************************************************************/

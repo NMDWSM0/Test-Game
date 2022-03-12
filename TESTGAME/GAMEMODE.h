@@ -6,6 +6,8 @@ enum GAMEMODE {
     OFF,
     ON,
     PAUSE,
+    CHOOSE,
+    COMPLETE,
 };
 
 #endif // !GAMEMODE_H

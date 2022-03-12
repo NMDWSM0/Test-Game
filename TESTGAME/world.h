@@ -38,6 +38,8 @@ public:
 
 	Entity& SpawnEntity(unsigned int id);
 
+	bool NoMonsterInWorld();
+
 	void Draw(Shader& shader);
 
 	void Clear();

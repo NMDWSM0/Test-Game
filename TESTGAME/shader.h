@@ -56,8 +56,9 @@ public:
     // 设置着色器程序中vec类型uniform变量的值
     //\param name uniform变量名，以string类型输入
     //\param value 将要设置的向量，无需先进行value_ptr转换
-    template <class T>
-    void setVec(const std::string& name, const T& vec) const;
+    void setVec2(const std::string& name, const glm::vec2& vec) const;
+    void setVec3(const std::string& name, const glm::vec3& vec) const;
+    void setVec4(const std::string& name, const glm::vec4& vec) const;
 
     // 设置着色器程序中mat类型uniform变量的值
     //\param name uniform变量名，以string类型输入
@@ -224,21 +225,19 @@ void Shader::setMat(const std::string& name, const T& value) const
         std::cout << "This is Other Matrix Type" << std::endl;
 }
 
-//
-template <class T>
-void Shader::setVec(const std::string& name, const T& vec) const
+void Shader::setVec2(const std::string& name, const glm::vec2& vec) const
 {
-    /*if (typeid(T) == typeid(glm::vec))
-        glUniform1f(glGetUniformLocation(ID, name.c_str()), vec.x);
-    else*/ if (typeid(T) == typeid(glm::vec2))
-        glUniform2f(glGetUniformLocation(ID, name.c_str()), vec.x, vec.y);
-    else if (typeid(T) == typeid(glm::vec3))
-        glUniform3f(glGetUniformLocation(ID, name.c_str()), vec.x, vec.y, vec.z);
-    else if (typeid(T) == typeid(glm::vec4))
-        glUniform4f(glGetUniformLocation(ID, name.c_str()), vec.x, vec.y, vec.z, vec.w);
-    //??
-    else
-        std::cout << "This is Other Vector Type" << std::endl;
+    glUniform2f(glGetUniformLocation(ID, name.c_str()), vec.x, vec.y);
+}
+
+void Shader::setVec3(const std::string& name, const glm::vec3& vec) const
+{
+    glUniform3f(glGetUniformLocation(ID, name.c_str()), vec.x, vec.y, vec.z);
+}
+
+void Shader::setVec4(const std::string& name, const glm::vec4& vec) const
+{
+    glUniform4f(glGetUniformLocation(ID, name.c_str()), vec.x, vec.y, vec.z, vec.w);
 }
 
 #endif

@@ -39,7 +39,7 @@ public:
 	void GoFront()
 	{
 		inst->GetPhysics()->SetHorizontalV(inst->IsRight() ? inst->speed : -inst->speed);
-		if (inst->OnGround())
+		if (inst->OnGround() && inst->jump_cd.CanCast())
 			inst->GetPhysics()->SetVerticalV(inst->jumpspeed);
 	}
 

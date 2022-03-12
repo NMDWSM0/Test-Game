@@ -1,18 +1,4 @@
-﻿  arrow.cpp
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\meshes.h(178,35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-  externfuncs.cpp
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\meshes.h(178,35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-  flyear.cpp
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\meshes.h(178,35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\flyear.cpp(22,2): warning C4060: switch 语句没有包含“case”或“default”标签
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\flyear.cpp(31,2): warning C4060: switch 语句没有包含“case”或“default”标签
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\flyear.cpp(40,2): warning C4060: switch 语句没有包含“case”或“default”标签
-  jumpblack.cpp
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\meshes.h(178,35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\jumpblack.cpp(21,2): warning C4060: switch 语句没有包含“case”或“default”标签
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\jumpblack.cpp(30,2): warning C4060: switch 语句没有包含“case”或“default”标签
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\jumpblack.cpp(39,2): warning C4060: switch 语句没有包含“case”或“default”标签
-  main.cpp
+﻿  main.cpp
 C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\meshes.h(178,35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\input.h(20,17): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
 C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\input.h(21,17): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
@@ -23,33 +9,9 @@ C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\input.h(29,13): warning C4244: 
 C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\input.h(36,35): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
 D:\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: “APIENTRY”: 宏重定义
 C:\OpenGL\include\glad\glad.h(32): message : 参见“APIENTRY”的前一个定义
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\main.cpp(45,15): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\main.cpp(96,24): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\main.cpp(103,35): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-  monster.cpp
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\meshes.h(178,35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\monster.cpp(55,2): warning C4060: switch 语句没有包含“case”或“default”标签
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\monster.cpp(207,14): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\monster.cpp(209,21): warning C4305: “+=”: 从“double”到“float”截断
-  player.cpp
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\meshes.h(178,35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\player.cpp(6,1): warning C4305: “参数”: 从“double”到“float”截断
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\player.cpp(61,30): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\player.cpp(314,30): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\player.cpp(314,43): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-  shieldblack.cpp
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\meshes.h(178,35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\shieldblack.cpp(40,2): warning C4060: switch 语句没有包含“case”或“default”标签
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\shieldblack.cpp(49,2): warning C4060: switch 语句没有包含“case”或“default”标签
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\shieldblack.cpp(58,2): warning C4060: switch 语句没有包含“case”或“default”标签
-  smalldot.cpp
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\meshes.h(178,35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\smalldot.cpp(19,2): warning C4060: switch 语句没有包含“case”或“default”标签
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\smalldot.cpp(28,2): warning C4060: switch 语句没有包含“case”或“default”标签
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\smalldot.cpp(37,2): warning C4060: switch 语句没有包含“case”或“default”标签
-  world.cpp
-C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\meshes.h(178,35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-  正在生成代码...
+C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\main.cpp(55,15): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\main.cpp(113,24): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\Administrator\Desktop\TESTGAME\TESTGAME\main.cpp(120,35): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
 LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/FORCE”规范)
 entity.obj : warning LNK4006: "public: __cdecl Material::Material(struct glm::vec<3,float,0>,struct glm::vec<3,float,0>,struct glm::vec<3,float,0>,float,float,float)" (??0Material@@QEAA@U?$vec@$02M$0A@@glm@@00MMM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: __cdecl Material::Material(struct glm::vec<3,float,0>,float,float,struct glm::vec<3,float,0>)" (??0Material@@QEAA@U?$vec@$02M$0A@@glm@@MM0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
@@ -83,6 +45,9 @@ entity.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::ba
 entity.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+entity.obj : warning LNK4006: "public: void __cdecl Shader::setVec2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<2,float,0> const &)const " (?setVec2@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$01M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+entity.obj : warning LNK4006: "public: void __cdecl Shader::setVec3(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<3,float,0> const &)const " (?setVec3@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$02M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+entity.obj : warning LNK4006: "public: void __cdecl Shader::setVec4(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<4,float,0> const &)const " (?setVec4@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$03M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "void __cdecl stbi__unpremultiply_on_load_thread(int)" (?stbi__unpremultiply_on_load_thread@@YAXH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: "public: void __cdecl Shader::use(void)" (?use@Shader@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 entity.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb 已在 arrow.obj 中定义；已忽略第二个定义
@@ -173,6 +138,9 @@ externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class st
 externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setVec2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<2,float,0> const &)const " (?setVec2@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$01M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setVec3(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<3,float,0> const &)const " (?setVec3@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$02M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::setVec4(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<4,float,0> const &)const " (?setVec4@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$03M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 externfuncs.obj : warning LNK4006: "void __cdecl stbi__unpremultiply_on_load_thread(int)" (?stbi__unpremultiply_on_load_thread@@YAXH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 externfuncs.obj : warning LNK4006: "public: void __cdecl Shader::use(void)" (?use@Shader@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 externfuncs.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb 已在 arrow.obj 中定义；已忽略第二个定义
@@ -263,6 +231,9 @@ flyear.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::ba
 flyear.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 flyear.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 flyear.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::setVec2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<2,float,0> const &)const " (?setVec2@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$01M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::setVec3(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<3,float,0> const &)const " (?setVec3@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$02M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+flyear.obj : warning LNK4006: "public: void __cdecl Shader::setVec4(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<4,float,0> const &)const " (?setVec4@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$03M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 flyear.obj : warning LNK4006: "void __cdecl stbi__unpremultiply_on_load_thread(int)" (?stbi__unpremultiply_on_load_thread@@YAXH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 flyear.obj : warning LNK4006: "public: void __cdecl Shader::use(void)" (?use@Shader@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 flyear.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb 已在 arrow.obj 中定义；已忽略第二个定义
@@ -353,6 +324,9 @@ jumpblack.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std:
 jumpblack.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 jumpblack.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 jumpblack.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+jumpblack.obj : warning LNK4006: "public: void __cdecl Shader::setVec2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<2,float,0> const &)const " (?setVec2@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$01M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+jumpblack.obj : warning LNK4006: "public: void __cdecl Shader::setVec3(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<3,float,0> const &)const " (?setVec3@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$02M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+jumpblack.obj : warning LNK4006: "public: void __cdecl Shader::setVec4(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<4,float,0> const &)const " (?setVec4@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$03M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 jumpblack.obj : warning LNK4006: "void __cdecl stbi__unpremultiply_on_load_thread(int)" (?stbi__unpremultiply_on_load_thread@@YAXH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 jumpblack.obj : warning LNK4006: "public: void __cdecl Shader::use(void)" (?use@Shader@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 jumpblack.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb 已在 arrow.obj 中定义；已忽略第二个定义
@@ -443,6 +417,9 @@ main.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basi
 main.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+main.obj : warning LNK4006: "public: void __cdecl Shader::setVec2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<2,float,0> const &)const " (?setVec2@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$01M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+main.obj : warning LNK4006: "public: void __cdecl Shader::setVec3(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<3,float,0> const &)const " (?setVec3@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$02M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+main.obj : warning LNK4006: "public: void __cdecl Shader::setVec4(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<4,float,0> const &)const " (?setVec4@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$03M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "void __cdecl stbi__unpremultiply_on_load_thread(int)" (?stbi__unpremultiply_on_load_thread@@YAXH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: "public: void __cdecl Shader::use(void)" (?use@Shader@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 main.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb 已在 arrow.obj 中定义；已忽略第二个定义
@@ -533,6 +510,9 @@ monster.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::b
 monster.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+monster.obj : warning LNK4006: "public: void __cdecl Shader::setVec2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<2,float,0> const &)const " (?setVec2@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$01M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+monster.obj : warning LNK4006: "public: void __cdecl Shader::setVec3(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<3,float,0> const &)const " (?setVec3@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$02M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+monster.obj : warning LNK4006: "public: void __cdecl Shader::setVec4(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<4,float,0> const &)const " (?setVec4@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$03M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "void __cdecl stbi__unpremultiply_on_load_thread(int)" (?stbi__unpremultiply_on_load_thread@@YAXH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: "public: void __cdecl Shader::use(void)" (?use@Shader@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 monster.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb 已在 arrow.obj 中定义；已忽略第二个定义
@@ -623,6 +603,9 @@ player.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::ba
 player.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+player.obj : warning LNK4006: "public: void __cdecl Shader::setVec2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<2,float,0> const &)const " (?setVec2@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$01M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+player.obj : warning LNK4006: "public: void __cdecl Shader::setVec3(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<3,float,0> const &)const " (?setVec3@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$02M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+player.obj : warning LNK4006: "public: void __cdecl Shader::setVec4(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<4,float,0> const &)const " (?setVec4@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$03M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "void __cdecl stbi__unpremultiply_on_load_thread(int)" (?stbi__unpremultiply_on_load_thread@@YAXH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: "public: void __cdecl Shader::use(void)" (?use@Shader@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 player.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb 已在 arrow.obj 中定义；已忽略第二个定义
@@ -713,6 +696,9 @@ shieldblack.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class st
 shieldblack.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 shieldblack.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 shieldblack.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+shieldblack.obj : warning LNK4006: "public: void __cdecl Shader::setVec2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<2,float,0> const &)const " (?setVec2@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$01M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+shieldblack.obj : warning LNK4006: "public: void __cdecl Shader::setVec3(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<3,float,0> const &)const " (?setVec3@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$02M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+shieldblack.obj : warning LNK4006: "public: void __cdecl Shader::setVec4(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<4,float,0> const &)const " (?setVec4@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$03M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 shieldblack.obj : warning LNK4006: "void __cdecl stbi__unpremultiply_on_load_thread(int)" (?stbi__unpremultiply_on_load_thread@@YAXH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 shieldblack.obj : warning LNK4006: "public: void __cdecl Shader::use(void)" (?use@Shader@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 shieldblack.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb 已在 arrow.obj 中定义；已忽略第二个定义
@@ -803,6 +789,9 @@ smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::
 smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setVec2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<2,float,0> const &)const " (?setVec2@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$01M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setVec3(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<3,float,0> const &)const " (?setVec3@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$02M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+smalldot.obj : warning LNK4006: "public: void __cdecl Shader::setVec4(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<4,float,0> const &)const " (?setVec4@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$03M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 smalldot.obj : warning LNK4006: "void __cdecl stbi__unpremultiply_on_load_thread(int)" (?stbi__unpremultiply_on_load_thread@@YAXH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 smalldot.obj : warning LNK4006: "public: void __cdecl Shader::use(void)" (?use@Shader@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 smalldot.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb 已在 arrow.obj 中定义；已忽略第二个定义
@@ -863,10 +852,15 @@ world.obj : warning LNK4006: "public: float __cdecl Combat::CalcDamage(class Ent
 world.obj : warning LNK4006: "private: void __cdecl Physics::CutVelocity(void)" (?CutVelocity@Physics@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: bool __cdecl Combat::DoAttack(class Entity *,float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?DoAttack@Combat@@QEAA_NPEAVEntity@@MV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: float __cdecl Health::DoDelta(float,class std::vector<class std::any,class std::allocator<class std::any> >)" (?DoDelta@Health@@QEAAMMV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+world.obj : warning LNK4006: "public: virtual void __cdecl DisaprBlock::Draw(class Shader &)" (?Draw@DisaprBlock@@UEAAXAEAVShader@@@Z) 已在 externfuncs.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Meshes::Draw(void)" (?Draw@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+world.obj : warning LNK4006: "public: virtual void __cdecl DisaprBlock::EventTask(unsigned int,class std::vector<class std::any,class std::allocator<class std::any> >)" (?EventTask@DisaprBlock@@UEAAXIV?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z) 已在 externfuncs.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: bool __cdecl Combat::GetAttacked(class Entity *,float)" (?GetAttacked@Combat@@QEAA_NPEAVEntity@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::GiveVelocity(struct glm::vec<2,float,0>)" (?GiveVelocity@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@U23@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+world.obj : warning LNK4006: "public: void __cdecl DisaprBlock::Hide(void)" (?Hide@DisaprBlock@@QEAAXXZ) 已在 externfuncs.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: bool __cdecl Physics::IsStatic(void)" (?IsStatic@Physics@@QEAA_NXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+world.obj : warning LNK4006: "public: void __cdecl DisaprBlock::OnCollideWithT(void)" (?OnCollideWithT@DisaprBlock@@QEAAXXZ) 已在 externfuncs.obj 中定义；已忽略第二个定义
+world.obj : warning LNK4006: "public: virtual void __cdecl DisaprBlock::PeriodicTask(unsigned int,float)" (?PeriodicTask@DisaprBlock@@UEAAXIM@Z) 已在 externfuncs.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Combat::RemoveATKModifiers(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?RemoveATKModifiers@Combat@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Combat::SetBaseATK(float)" (?SetBaseATK@Combat@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Combat::SetCanAttack(bool (__cdecl*)(class Entity *,class Entity *,class std::vector<class std::any,class std::allocator<class std::any> >))" (?SetCanAttack@Combat@@QEAAXP6A_NPEAVEntity@@0V?$vector@Vany@std@@V?$allocator@Vany@std@@@2@@std@@@Z@Z) 已在 arrow.obj 中定义；已忽略第二个定义
@@ -877,7 +871,9 @@ world.obj : warning LNK4006: "public: void __cdecl Health::SetInvincible(bool)" 
 world.obj : warning LNK4006: "public: void __cdecl Health::SetMaxHealth(float,bool)" (?SetMaxHealth@Health@@QEAAXM_N@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetVelocity(struct glm::vec<2,float,0>)" (?SetVelocity@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@U23@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: struct glm::vec<2,float,0> __cdecl Physics::SetVerticalV(float)" (?SetVerticalV@Physics@@QEAA?AU?$vec@$01M$0A@@glm@@M@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+world.obj : warning LNK4006: "public: void __cdecl DisaprBlock::Show(void)" (?Show@DisaprBlock@@QEAAXXZ) 已在 externfuncs.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Meshes::Terminate(void)" (?Terminate@Meshes@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
+world.obj : warning LNK4006: "public: virtual void __cdecl DisaprBlock::TimeTask(unsigned int)" (?TimeTask@DisaprBlock@@UEAAXI@Z) 已在 externfuncs.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Physics::UpdateVelocity(float)" (?UpdateVelocity@Physics@@QEAAXM@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "private: void __cdecl Meshes::loadToGL(void)" (?loadToGL@Meshes@@AEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "float __cdecl random(void)" (?random@@YAMXZ) 已在 arrow.obj 中定义；已忽略第二个定义
@@ -893,6 +889,9 @@ world.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::bas
 world.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Shader::setInt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int,int)const " (?setInt@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+world.obj : warning LNK4006: "public: void __cdecl Shader::setVec2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<2,float,0> const &)const " (?setVec2@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$01M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+world.obj : warning LNK4006: "public: void __cdecl Shader::setVec3(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<3,float,0> const &)const " (?setVec3@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$02M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
+world.obj : warning LNK4006: "public: void __cdecl Shader::setVec4(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct glm::vec<4,float,0> const &)const " (?setVec4@Shader@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU?$vec@$03M$0A@@glm@@@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "void __cdecl stbi__unpremultiply_on_load_thread(int)" (?stbi__unpremultiply_on_load_thread@@YAXH@Z) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: "public: void __cdecl Shader::use(void)" (?use@Shader@@QEAAXXZ) 已在 arrow.obj 中定义；已忽略第二个定义
 world.obj : warning LNK4006: stbi_convert_iphone_png_to_rgb 已在 arrow.obj 中定义；已忽略第二个定义

@@ -4,6 +4,8 @@
 
 //blocks
 #include "redblock.h"
+#include "disaprblock.h"
+#include "spring.h"
 
 //arrow
 #include "arrow.h"

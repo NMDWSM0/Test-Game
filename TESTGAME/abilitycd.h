@@ -13,7 +13,7 @@ class Ability_CD
 
 public:
 	Ability_CD(float cd):
-		cd(cd), cd_modifier(SourceModifierList(1.0f, MODITYPE::MULTIPLY))
+		cd(cd), cd_modifier(SourceModifierList(1.0f, MODITYPE::MULTIPLY)), cur_t(cd + 0.1f)
 	{
 
 	}

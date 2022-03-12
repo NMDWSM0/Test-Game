@@ -5,6 +5,10 @@
 
 extern GAMEMODE gameon;
 
+extern unsigned int worldnumber;
+extern unsigned int currentworldlevel;
+extern unsigned int passedlevel;
+
 extern Player* ThePlayer;
 extern World* TheWorld;
 
@@ -182,5 +186,11 @@ Entity* FindCloestEntityWithTag(float x, float y, float z, std::string tag)
 
 void PlayerDeathQuit()
 {
-	gameon = OFF;
+	gameon = CHOOSE;
+}
+
+void LevelComplete()
+{
+	passedlevel = std::max(passedlevel, currentworldlevel + 1);
+	gameon = COMPLETE;
 }

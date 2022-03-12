@@ -82,6 +82,8 @@ public:
 
 	void Draw(Shader& shader);
 
+	void Update(float deltaT);
+
 	/**************************************/
 	//
 	void ShootArrow();

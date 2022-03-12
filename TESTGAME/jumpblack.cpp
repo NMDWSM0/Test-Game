@@ -2,7 +2,7 @@
 #include "jumpblackbrain.h"
 
 JumpBlack::JumpBlack() :
-	Monster("assets/prefabs/jumpblack.txt", "assets/images/jumpblack.png")
+	Monster("assets/prefabs/jumpblack.txt", "assets/images/jumpblack.png"), jump_cd(2.7f)
 {
 	SetCollisionGroup(COLLISIONGROUP::THR_ENEMIES);
 
@@ -37,6 +37,15 @@ void JumpBlack::PeriodicTask(unsigned int id, float time)
 	{
 
 	}
+}
+
+/**************************************************************/
+
+void JumpBlack::Update(float deltaT)
+{
+	Monster::Update(deltaT);
+
+	jump_cd.Timedelta(deltaT);
 }
 
 /**************************************************************/

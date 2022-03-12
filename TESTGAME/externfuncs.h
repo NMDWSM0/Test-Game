@@ -18,5 +18,6 @@ std::vector<Entity*> FindEntities(float x, float y, float z, float radius, const
 Entity* FindCloestEntityWithTag(float x, float y, float z, std::string tag);
 
 void PlayerDeathQuit();
+void LevelComplete();
 
 #endif // !EXTERNFUNCS_H

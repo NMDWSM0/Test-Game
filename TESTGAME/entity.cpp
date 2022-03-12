@@ -5,11 +5,13 @@ Entity::Entity() :
 	meshes(nullptr), textures(nullptr), materials(nullptr), physics(nullptr), combat(nullptr), health(nullptr)
 {
 	position = glm::vec3(0.0f);
+	AddTag("entity");
 }
 
 Entity::Entity(const std::string& filename, const std::string& texturename)
 {
 	position = glm::vec3(0.0f);
+	AddTag("entity");
 
 	std::ifstream file(filename);
 	if (!file.is_open())
@@ -301,11 +303,27 @@ bool Entity::OnGround() const
 		float deltay = position.y - physics->boundingbox.y / 2.0f - (e->position.y + e->physics->boundingbox.y / 2.0f);
 		if (deltay > -0.1f && deltay < 0.01f)
 			return true;
-		/*if ((position.y - e->position.y > 0 && position.y - e->position.y < 1.01f) && fabs(position.x - e->position.x) + 0.01f < (e->physics->boundingbox.x + physics->boundingbox.x) / 2.0f)
-			return true;*/
 	}
 	return false;
 }
+
+void Entity::SendEventToUnder(const std::vector<std::string>& tags, const std::string& eventname) const
+{
+	auto ents = FindEntities(position.x, position.y, position.z, sqrtf(2.0f) * physics->boundingbox.y, tags);
+	for (auto e : ents)
+	{
+		float deltax = fabs(position.x - e->position.x);
+		float deltay = fabs(position.y - e->position.y);
+
+		float boundx = (e->physics->boundingbox.x + physics->boundingbox.x) / 2.0f;
+		float boundy = (e->physics->boundingbox.y + physics->boundingbox.y) / 2.0f;
+
+		if (boundx - deltax > -0.1f && boundy - deltay > -0.1f)
+			e->PushEvent(eventname);
+	}
+}
+
+/**************************************************************************/
 
 //此为基本流程，子类可以自行覆盖方法
 void Entity::UpdatePosition(float deltaT)

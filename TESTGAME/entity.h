@@ -77,6 +77,8 @@ public:
 
 	bool OnGround() const;
 
+	void SendEventToUnder(const std::vector<std::string>& tags, const std::string& eventname) const;
+
 	virtual COLLIDEDIRECTION CollideWith(const Entity& ent) const;
 
 	//transform

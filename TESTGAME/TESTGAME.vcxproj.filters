@@ -91,6 +91,12 @@
     <Filter Include="源文件\imgui">
       <UniqueIdentifier>{bda77007-729d-4d93-a219-20b3163034a5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\background">
+      <UniqueIdentifier>{b188a493-b2f3-47f0-9c88-fe50f996e9f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\shaders\bgshader">
+      <UniqueIdentifier>{6e289ccb-ebfd-426c-8e1d-52d476815c6d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h">
@@ -219,6 +225,15 @@
     <ClInclude Include="GAMEMODE.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="spring.h">
+      <Filter>头文件\objects\entities\blockers</Filter>
+    </ClInclude>
+    <ClInclude Include="disaprblock.h">
+      <Filter>头文件\objects\entities\blockers</Filter>
+    </ClInclude>
+    <ClInclude Include="background.h">
+      <Filter>头文件\background</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -285,6 +300,12 @@
     </None>
     <None Include="shaders\mainshader\main.vert">
       <Filter>源文件\shaders\mainshader</Filter>
+    </None>
+    <None Include="shaders\bgshader\bg.frag">
+      <Filter>源文件\shaders\bgshader</Filter>
+    </None>
+    <None Include="shaders\bgshader\bg.vert">
+      <Filter>源文件\shaders\bgshader</Filter>
     </None>
   </ItemGroup>
 </Project>

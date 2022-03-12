@@ -2,6 +2,7 @@
 #define JUMPBLACK_H
 
 #include "monster.h"
+#include "abilitycd.h"
 
 class JumpBlack : public Monster
 {
@@ -18,6 +19,8 @@ public:
 
 	float jumpspeed = 12.0f;
 
+	Ability_CD jump_cd;
+
 public:
 	JumpBlack();
 
@@ -28,6 +31,10 @@ public:
 	void EventTask(unsigned int id, DATA data = DATA{});
 
 	void PeriodicTask(unsigned int id, float time);
+
+	/**************************************/
+
+	void Update(float deltaT);
 
 	/**************************************/
 

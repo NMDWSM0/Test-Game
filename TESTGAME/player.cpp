@@ -24,7 +24,6 @@ void Player::PlayerDeath()
 	RemoveAllListeners();
 	RemoveAllTimeTask();
 	RemoveAllPeriodicTask();
-
 }
 
 void Player::OnBecameHuman()
@@ -32,11 +31,12 @@ void Player::OnBecameHuman()
 	position.z = 0.1f;
 	SetGravityType(GRAVITYTYPE::GRAVITATIONAL);
 	SetCollisionGroup(COLLISIONGROUP::PLAYER);
-	SetBounding(glm::vec3(1.1f, 1.3f, 0.0f));
+	SetBounding(glm::vec3(0.999f, 1.3f, 0.0f));
 	physics->SetVelocity(glm::vec2(0.0f));
 
 	health->SetMaxHealth(30.0f);
 	health->SetCurrentHealth(30.0f);
+	health->SetInvincible(false);
 
 	ListenForEvent("attacked", ONATTACKED);
 	ListenForEvent("death", QUITGAME);
@@ -200,6 +200,8 @@ void Player::UpdatePosition(float deltaT)
 				if ((*iter)->position.y < position.y)
 				{
 					jump_level = 0;
+					if ((*iter)->HasTag("spring"))
+						physics->SetVerticalV(19.0f);
 				}
 			}
 			if (t == COLLIDEDIRECTION::ALLDIR)
@@ -243,6 +245,21 @@ void Player::UpdateScaling(float deltaT)
 		SetScale(-1.0f, 1.0f, 1.0f);
 }
 
+void Player::Update(float deltaT)
+{
+	TimeTick(deltaT);
+
+	if (HasPhysics())
+	{
+		UpdatePosition(deltaT);
+		UpdateRotation(deltaT);
+		UpdateScaling(deltaT);
+	}
+
+	if (!health->IsDead())
+		SendEventToUnder({ "blockers", "disaprblock" }, "collidewitht");
+}
+
 void Player::Draw(Shader& shader)
 {
 	if (!twint_on)
@@ -252,7 +269,7 @@ void Player::Draw(Shader& shader)
 		shader.setBool("uUseMult", true);
 	else
 		shader.setBool("uUseMult", false);
-	shader.setVec("uMultColor", stunned_color);
+	shader.setVec4("uMultColor", stunned_color);
 
 	Entity::Draw(shader);
 

@@ -95,6 +95,8 @@ public:
 
     void AddTag(const std::string& tag)
     {
+        if (HasTag(tag))
+            return;
         std::string t(tag);
         tags.push_back(t);
     }
@@ -219,15 +221,17 @@ public:
     }
 
     /************************************************************/
-    //
     void TimeTick(float deltaT)
     {
+        std::vector<unsigned int> ttaskers_ids;
+        struct doers { unsigned int func_id; float cur_t; };
+        std::vector<doers> ptaskers_ids;
         for (auto iter = ttaskers.begin(); iter != ttaskers.end(); )
         {
             (*iter).cur_t += deltaT;
             if ((*iter).cur_t >= (*iter).max_t)
             {
-                TimeTask((*iter).func_id);
+                ttaskers_ids.push_back((*iter).func_id);        //不在这里执行
                 if (iter == ttaskers.end())
                     goto next;
                 iter = ttaskers.erase(iter);
@@ -247,12 +251,21 @@ public:
             
             if ((*iter).cur_t >= (*iter).period * ((*iter).times + 1))
             {
-                PeriodicTask((*iter).func_id, (*iter).cur_t);
+                ptaskers_ids.push_back({ (*iter).func_id, (*iter).cur_t });    //不在这里执行
                 if (iter == ptaskers.end())
                     break;
                 (*iter).times++;
             }
             ++iter;
+        }
+        //全部在后面分离执行，避免这些taskers里面有新加tasker之类的，把东西弄坏了
+        for (auto t : ttaskers_ids)
+        {
+            TimeTask(t);
+        }
+        for (auto p : ptaskers_ids)
+        {
+            PeriodicTask(p.func_id, p.cur_t);
         }
     }
 };

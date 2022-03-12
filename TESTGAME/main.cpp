@@ -6,9 +6,11 @@
 #include "followcamera.h"
 #include "input.h"
 #include "world.h"
+#include "background.h"
 #include <GLFW/glfw3.h>
 #include "imgui/imgui_manager.h"
 #include <iostream>
+#include <stdlib.h>
 #include <windows.h>
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1900) && !defined(IMGUI_DISABLE_WIN32_FUNCTIONS)
@@ -30,15 +32,23 @@ Input* TheInput;
 Player* ThePlayer;
 //世界
 World* TheWorld;
+//背景
+BackGround* TheBackGround;
 
 GAMEMODE gameon = OFF;
 
 std::vector<std::string> worldfiles =
 {
-    "assets/worlds/testworld.txt",
+    "assets/worlds/level1.txt",
+    "assets/worlds/level2.txt",
+    "assets/worlds/level3.txt",
+    "assets/worlds/level4.txt",
+    "assets/worlds/level5.txt",
 };
 
-unsigned int worldnumber = 1;
+unsigned int worldnumber = 5;
+unsigned int currentworldlevel = 0;
+unsigned int passedlevel = 0;
 
 int main()
 {
@@ -69,6 +79,14 @@ int main()
         return -1;
     }
     
+    //读取数据
+    FILE* datafile = fopen("profile/gameprogress.txt", "r");
+    if (datafile != nullptr)
+    {
+        fscanf(datafile, "%d", &passedlevel);
+        fclose(datafile);
+    }
+
     //创建玩家类
     ThePlayer = new Player("assets/testplayer.txt", "assets/images/testplayer.png");
     //创建输入类
@@ -78,17 +96,16 @@ int main()
     TheCamera->LockToZFront();
     //创建世界
     TheWorld = new World();
-
-    unsigned int currentworldlevel = 0;
+    //设置背景
+    TheBackGround = new BackGround();
 
     //加载着色器
     Shader mainshader("shaders/mainshader/main.vert", "shaders/mainshader/main.frag");
+    Shader bgshader("shaders/bgshader/bg.vert", "shaders/bgshader/bg.frag");
 
     //初始化ImGui（使用自定义类）
     ImGuiManager imgui(window);
 
-    //开启深度测试
-    glEnable(GL_DEPTH_TEST);
     //
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -103,6 +120,7 @@ int main()
         currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
+        glfwSetWindowTitle(window, ("TESTGAME | " + std::to_string(ImGui::GetIO().Framerate) + "fps").c_str());
 
         glClearColor(0.1f, 0.3f, 0.4f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -131,24 +149,47 @@ int main()
             glm::vec2 halfsize = TheCamera->GetHalfViewSize();
             glm::mat4 projection = glm::ortho(-halfsize.x, halfsize.x, -halfsize.y, halfsize.y, 1.0f, 35.0f);
 
-            glClearColor(0.4f, 0.3f, 0.8f, 1.0f);
+            glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+            /***************************************/
+            //关闭深度测试
+            glDisable(GL_DEPTH_TEST);
+
+            bgshader.use();
+            TheBackGround->Update(deltaTime);
+            TheBackGround->Draw(bgshader);
+
+            /***************************************/
+            //开启深度测试
+            glEnable(GL_DEPTH_TEST);
 
             mainshader.use();
             mainshader.setMat("uView", view);
             mainshader.setMat("uProjection", projection);
 
             TheWorld->Draw(mainshader);
+            /***************************************/
+
         }
         else if (gameon == PAUSE)
         {
             glClearColor(0.4f, 0.3f, 0.8f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            TheWorld->Draw(mainshader);
+            /***************************************/
+            //关闭深度测试
+            glDisable(GL_DEPTH_TEST);
+            bgshader.use();
+            TheBackGround->Draw(bgshader);
+            ///***************************************/
+            ////开启深度测试
+            //glEnable(GL_DEPTH_TEST);
+            //mainshader.use();
+            //TheWorld->Draw(mainshader);
+            ///***************************************/
             //UI
             ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         }
-        else if (gameon == OFF)
+        else if (gameon == OFF || gameon == CHOOSE || gameon == COMPLETE)
         {
             if (TheWorld->HasLoaded())
             {
@@ -169,6 +210,15 @@ int main()
     imgui.Terminate();
     //退出
     glfwTerminate();
+
+    //写入数据
+    FILE* wdatafile = fopen("profile/gameprogress.txt", "w");
+    if (wdatafile != nullptr)
+    {
+        fprintf(wdatafile, "%d", passedlevel);
+        fclose(wdatafile);
+    }
+
     return 0;
 }
 

@@ -108,6 +108,12 @@ Entity& World::SpawnEntity(unsigned int id)
 	case 2:
 		ent = new RedBlock_A();
 		break;
+	case 3:
+		ent = new DisaprBlock();
+		break;
+	case 4:
+		ent = new Spring();
+		break;
 
 	//arrow
 	case 99:
@@ -126,6 +132,7 @@ Entity& World::SpawnEntity(unsigned int id)
 		break;
 	case 103:
 		ent = new ShieldBlack();
+		break;
 	}
 
 	entities.push_back(ent);
@@ -135,6 +142,16 @@ Entity& World::SpawnEntity(unsigned int id)
 std::vector<Entity*>& World::GetEntities()
 {
 	return entities;
+}
+
+bool World::NoMonsterInWorld()
+{
+	for (auto ent : entities)
+	{
+		if (ent->HasTag("monster"))
+			return false;
+	}
+	return true;
 }
 
 void World::Draw(Shader& shader)
@@ -157,6 +174,9 @@ void World::Clear()
 
 void World::UpdateEntities(float deltaT)
 {
+	if (NoMonsterInWorld())
+		LevelComplete();
+
 	for (auto e : entities)
 	{
 		e->Update(deltaT);
